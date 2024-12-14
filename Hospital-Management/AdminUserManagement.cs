@@ -15,6 +15,12 @@ namespace Hospital_Management
         public AdminUserManagement()
         {
             InitializeComponent();
+
+            User user = new User();
+
+            List<User> users = user.getUsers();
+
+            dataGridView1.DataSource = users;
         }
 
         private void homeButton_Click(object sender, EventArgs e)

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hospital_Management
 {
-    public partial class BillingManagement : Form
+    public partial class BillingOfficerDashboard : Form
     {
-        public BillingManagement()
+        public BillingOfficerDashboard()
         {
             InitializeComponent();
         }

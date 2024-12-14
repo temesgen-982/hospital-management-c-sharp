@@ -12,9 +12,16 @@ namespace Hospital_Management
 {
     public partial class DoctorPatientList : Form
     {
+
         public DoctorPatientList()
         {
             InitializeComponent();
+
+            Patient patient = new Patient();
+
+            List<Patient> patients = patient.getPatients();
+
+            dataGridView1.DataSource = patients;
         }
 
         public void homeButton_Click(object sender, EventArgs e)

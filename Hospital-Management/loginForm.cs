@@ -40,7 +40,7 @@ namespace Hospital_Management
                     found = true;
                     switch (users[i].Role)
                     {
-                        case "Administrator":
+                        case "Admin":
                             AdminDashboard admin = new AdminDashboard();
                             admin.Show();
                             break;
@@ -55,6 +55,10 @@ namespace Hospital_Management
                         case "Receptionist":
                             ReceptionistDashboard reception = new ReceptionistDashboard();
                             reception.Show();
+                            break;
+                        case "Billing Officer":
+                            BillingOfficerDashboard officer = new BillingOfficerDashboard();
+                            officer.Show();
                             break;
                         default:
                             break;

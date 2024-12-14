@@ -78,11 +78,11 @@
     <Compile Include="AdminUserManagement.Designer.cs">
       <DependentUpon>AdminUserManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="BillingManagement.cs">
+    <Compile Include="BillingOfficerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BillingManagement.Designer.cs">
-      <DependentUpon>BillingManagement.cs</DependentUpon>
+    <Compile Include="BillingOfficerDashboard.Designer.cs">
+      <DependentUpon>BillingOfficerDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DoctorAppointments.cs">
       <SubType>Form</SubType>
@@ -126,6 +126,7 @@
     <Compile Include="NursePatientList.Designer.cs">
       <DependentUpon>NursePatientList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patient.cs" />
     <Compile Include="PatientRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,8 +181,8 @@
     <EmbeddedResource Include="AdminUserManagement.resx">
       <DependentUpon>AdminUserManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BillingManagement.resx">
-      <DependentUpon>BillingManagement.cs</DependentUpon>
+    <EmbeddedResource Include="BillingOfficerDashboard.resx">
+      <DependentUpon>BillingOfficerDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorAppointments.resx">
       <DependentUpon>DoctorAppointments.cs</DependentUpon>
