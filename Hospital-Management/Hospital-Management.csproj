@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Hospital_Management</RootNamespace>
     <AssemblyName>Hospital-Management</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,11 +48,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminstratorDashboard.cs">
+    <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminstratorDashboard.Designer.cs">
-      <DependentUpon>AdminstratorDashboard.cs</DependentUpon>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPerformanceMetrics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPerformanceMetrics.Designer.cs">
+      <DependentUpon>AdminPerformanceMetrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminReportingTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminReportingTools.Designer.cs">
+      <DependentUpon>AdminReportingTools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSystemAlerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSystemAlerts.Designer.cs">
+      <DependentUpon>AdminSystemAlerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUserManagement.Designer.cs">
+      <DependentUpon>AdminUserManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="BillingManagement.cs">
       <SubType>Form</SubType>
@@ -128,8 +153,20 @@
     <Compile Include="ReceptionistPatientList.Designer.cs">
       <DependentUpon>ReceptionistPatientList.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminstratorDashboard.resx">
-      <DependentUpon>AdminstratorDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPerformanceMetrics.resx">
+      <DependentUpon>AdminPerformanceMetrics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminReportingTools.resx">
+      <DependentUpon>AdminReportingTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSystemAlerts.resx">
+      <DependentUpon>AdminSystemAlerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUserManagement.resx">
+      <DependentUpon>AdminUserManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BillingManagement.resx">
       <DependentUpon>BillingManagement.cs</DependentUpon>

@@ -39,7 +39,7 @@ namespace Hospital_Management
                     switch (users[i].Role)
                     {
                         case "Administrator":
-                            AdminstratorDashboard admin = new AdminstratorDashboard();
+                            AdminDashboard admin = new AdminDashboard();
                             admin.Show();
                             break;
                         case "Nurse":
