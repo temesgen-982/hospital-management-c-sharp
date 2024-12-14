@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hospital_Management
 {
-    public partial class loginForm : Form
+    public partial class LoginForm : Form
     {
-        public loginForm()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -76,6 +76,18 @@ namespace Hospital_Management
         {
             signupForm signup = new signupForm();
             signup.Show();
+        }
+
+        private void password_CheckedChange(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBox2.PasswordChar = '\0';
+            }
+            else
+            {
+                textBox2.PasswordChar = '*';
+            }
         }
     }
 }
