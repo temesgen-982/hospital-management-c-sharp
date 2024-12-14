@@ -88,3 +88,5 @@ C:\Users\hp\Documents\hospital-management-c-sharp\Hospital-Management\obj\Debug\
 C:\Users\hp\Documents\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Management.csproj.CoreCompileInputs.cache
 C:\Users\hp\Documents\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Management.exe
 C:\Users\hp\Documents\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Management.pdb
+C:\Users\NEW\Documents\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.NurseAppointments.resources
+C:\Users\NEW\Documents\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.NursePatientList.resources

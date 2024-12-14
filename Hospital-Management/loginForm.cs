@@ -26,12 +26,14 @@ namespace Hospital_Management
         {
             string username = textBox1.Text;
             string password = textBox2.Text;
-            string role;
+
             bool found = false;
 
-            List<User> users = User.users;
+            User user = new User();
 
-            for (int i = 0; i < 4; i++)
+            List<User> users = user.getUsers();
+
+            for (int i = 0; i < users.Count; i++)
             {
                 if (users[i].Username == username && users[i].Password == password)
                 {
