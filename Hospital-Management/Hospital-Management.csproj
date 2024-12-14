@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Hospital_Management</RootNamespace>
     <AssemblyName>Hospital-Management</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -88,6 +89,18 @@
     <Compile Include="DoctorPatientList.Designer.cs">
       <DependentUpon>DoctorPatientList.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientRegistration.Designer.cs">
+      <DependentUpon>PatientRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceptionistAppointmentScheduling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceptionistAppointmentScheduling.Designer.cs">
+      <DependentUpon>ReceptionistAppointmentScheduling.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReceptionistDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +122,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="ReceptionistPatientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceptionistPatientList.Designer.cs">
+      <DependentUpon>ReceptionistPatientList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminstratorDashboard.resx">
       <DependentUpon>AdminstratorDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,8 +149,17 @@
     <EmbeddedResource Include="DoctorPatientList.resx">
       <DependentUpon>DoctorPatientList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PatientRegistration.resx">
+      <DependentUpon>PatientRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceptionistAppointmentScheduling.resx">
+      <DependentUpon>ReceptionistAppointmentScheduling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReceptionistDashboard.resx">
       <DependentUpon>ReceptionistDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceptionistPatientList.resx">
+      <DependentUpon>ReceptionistPatientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="signupForm.resx">
       <DependentUpon>signupForm.cs</DependentUpon>
