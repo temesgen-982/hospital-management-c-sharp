@@ -15,6 +15,12 @@ namespace Hospital_Management
         public BillingOfficerDashboard()
         {
             InitializeComponent();
+
+            Billing billing = new Billing();
+
+            List<Billing> listData = billing.getBillings();
+
+            dataGridView1.DataSource = listData;
         }
     }
 }

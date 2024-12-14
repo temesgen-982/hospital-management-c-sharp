@@ -38,6 +38,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Title = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -45,16 +46,15 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(62, 244);
+            this.button2.Location = new System.Drawing.Point(34, 244);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 30);
@@ -65,7 +65,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(225, 244);
+            this.button3.Location = new System.Drawing.Point(197, 244);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(131, 30);
@@ -78,7 +78,7 @@
             this.comboBox1.AllowDrop = true;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(374, 189);
+            this.comboBox1.Location = new System.Drawing.Point(346, 189);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(203, 28);
@@ -88,7 +88,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(225, 187);
+            this.button4.Location = new System.Drawing.Point(197, 187);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(131, 30);
@@ -112,7 +112,7 @@
             this.BillingManagementForm.BackColor = System.Drawing.SystemColors.Window;
             this.BillingManagementForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BillingManagementForm.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BillingManagementForm.Location = new System.Drawing.Point(338, 35);
+            this.BillingManagementForm.Location = new System.Drawing.Point(218, 35);
             this.BillingManagementForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BillingManagementForm.Name = "BillingManagementForm";
             this.BillingManagementForm.Size = new System.Drawing.Size(251, 50);
@@ -122,7 +122,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 25);
+            this.textBox1.Location = new System.Drawing.Point(34, 25);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(150, 20);
@@ -131,7 +131,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(225, 19);
+            this.button5.Location = new System.Drawing.Point(197, 19);
             this.button5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(131, 28);
@@ -142,7 +142,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(62, 187);
+            this.button1.Location = new System.Drawing.Point(34, 187);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 30);
@@ -161,10 +161,19 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(309, 88);
+            this.panel1.Location = new System.Drawing.Point(214, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(697, 316);
+            this.panel1.Size = new System.Drawing.Size(827, 316);
             this.panel1.TabIndex = 18;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(34, 74);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(751, 92);
+            this.dataGridView1.TabIndex = 10;
             // 
             // Title
             // 
@@ -255,16 +264,7 @@
             this.panel2.Size = new System.Drawing.Size(180, 461);
             this.panel2.TabIndex = 27;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(62, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(515, 92);
-            this.dataGridView1.TabIndex = 10;
-            // 
-            // BillingManagement
+            // BillingOfficerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -274,14 +274,14 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.BillingManagementForm);
             this.Controls.Add(this.panel1);
-            this.Name = "BillingManagement";
+            this.Name = "BillingOfficerDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BillingManagement";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
