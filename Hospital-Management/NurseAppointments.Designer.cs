@@ -1,6 +1,6 @@
 ﻿namespace Hospital_Management
 {
-    partial class NurseDashboard
+    partial class NurseAppointments
     {
         /// <summary>
         /// Required designer variable.
@@ -119,7 +119,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(270, 709);
-            this.panel1.TabIndex = 20;
+            this.panel1.TabIndex = 22;
             // 
             // button6
             // 
@@ -134,17 +134,16 @@
             this.button6.Text = "View Alerts";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // NurseDashboard
+            // NurseAppointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1626, 709);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "NurseDashboard";
+            this.Name = "NurseAppointments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NurseDashboard";
+            this.Text = "NurseAppointments";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

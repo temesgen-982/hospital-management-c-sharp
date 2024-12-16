@@ -1,33 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\",
+  "WorkspaceRootPath": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|c:\\users\\administrator\\desktop\\gitrep\\hospital-management-c-sharp\\hospital-management\\receptionistdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\receptionistdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|c:\\users\\administrator\\desktop\\gitrep\\hospital-management-c-sharp\\hospital-management\\receptionistdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\receptionistdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|c:\\users\\administrator\\desktop\\gitrep\\hospital-management-c-sharp\\hospital-management\\receptionistappointmentscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\receptionistappointmentscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|c:\\users\\administrator\\desktop\\gitrep\\hospital-management-c-sharp\\hospital-management\\doctordashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\doctordashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|c:\\users\\administrator\\desktop\\gitrep\\hospital-management-c-sharp\\hospital-management\\receptionistpatientlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|c:\\users\\hp\\documents\\hospital-management-c-sharp\\hospital-management\\receptionistpatientlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\receptionistpatientlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|c:\\users\\administrator\\desktop\\gitrep\\hospital-management-c-sharp\\hospital-management\\patientregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\hospital-management\\receptionistappointmentscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\receptionistappointmentscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\hospital-management\\doctorpatientlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\doctorpatientlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\hospital-management\\receptionistdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\receptionistdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\hospital-management\\doctordashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\doctordashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\hospital-management\\patientregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\patientregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|c:\\users\\administrator\\desktop\\gitrep\\hospital-management-c-sharp\\hospital-management\\doctordashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\hospital-management\\receptionistdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\receptionistdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\hospital-management\\doctordashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6C5D1F25-C2F4-442E-865A-79787504E3BE}|Hospital-Management\\Hospital-Management.csproj|solutionrelative:hospital-management\\doctordashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,16 +42,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReceptionistAppointmentScheduling.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistAppointmentScheduling.cs",
+              "RelativeDocumentMoniker": "Hospital-Management\\ReceptionistAppointmentScheduling.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistAppointmentScheduling.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistAppointmentScheduling.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:02:24.397Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "DoctorDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\DoctorDashboard.cs",
+              "RelativeDocumentMoniker": "Hospital-Management\\DoctorDashboard.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\DoctorDashboard.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\DoctorDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T16:42:27.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReceptionistDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistDashboard.cs",
+              "RelativeDocumentMoniker": "Hospital-Management\\ReceptionistDashboard.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistDashboard.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T16:41:24.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ReceptionistPatientList.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistPatientList.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistPatientList.cs",
               "RelativeDocumentMoniker": "Hospital-Management\\ReceptionistPatientList.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistPatientList.cs [Design]*",
-              "RelativeToolTip": "Hospital-Management\\ReceptionistPatientList.cs [Design]*",
+              "ToolTip": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistPatientList.cs [Design]",
+              "RelativeToolTip": "Hospital-Management\\ReceptionistPatientList.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-14T17:06:47.141Z",
               "EditorCaption": " [Design]"
@@ -55,76 +92,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ReceptionistAppointmentScheduling.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistAppointmentScheduling.cs",
-              "RelativeDocumentMoniker": "Hospital-Management\\ReceptionistAppointmentScheduling.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistAppointmentScheduling.cs [Design]",
-              "RelativeToolTip": "Hospital-Management\\ReceptionistAppointmentScheduling.cs [Design]",
+              "Title": "DoctorPatientList.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\DoctorPatientList.cs",
+              "RelativeDocumentMoniker": "Hospital-Management\\DoctorPatientList.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\DoctorPatientList.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\DoctorPatientList.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T17:02:24.397Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-14T17:43:34.787Z"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReceptionistDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistDashboard.cs",
-              "RelativeDocumentMoniker": "Hospital-Management\\ReceptionistDashboard.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistDashboard.cs*",
-              "RelativeToolTip": "Hospital-Management\\ReceptionistDashboard.cs*",
-              "ViewState": "AgIAABsAAAAAAAAAAAAtwCsAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:46:48.855Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DoctorDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\DoctorDashboard.cs",
-              "RelativeDocumentMoniker": "Hospital-Management\\DoctorDashboard.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\DoctorDashboard.cs [Design]",
-              "RelativeToolTip": "Hospital-Management\\DoctorDashboard.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:42:27.158Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReceptionistDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistDashboard.cs",
-              "RelativeDocumentMoniker": "Hospital-Management\\ReceptionistDashboard.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistDashboard.cs [Design]*",
-              "RelativeToolTip": "Hospital-Management\\ReceptionistDashboard.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:41:24.301Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DoctorDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\DoctorDashboard.cs",
-              "RelativeDocumentMoniker": "Hospital-Management\\DoctorDashboard.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\DoctorDashboard.cs",
-              "RelativeToolTip": "Hospital-Management\\DoctorDashboard.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:52:37.994Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "patientRegistration.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\patientRegistration.cs",
-              "RelativeDocumentMoniker": "Hospital-Management\\patientRegistration.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\patientRegistration.cs [Design]",
-              "RelativeToolTip": "Hospital-Management\\patientRegistration.cs [Design]",
+              "Title": "PatientRegistration.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\PatientRegistration.cs",
+              "RelativeDocumentMoniker": "Hospital-Management\\PatientRegistration.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\PatientRegistration.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\Administrator\\Desktop\\GITREP\\hospital-management-c-sharp\\Hospital-Management\\PatientRegistration.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T16:54:33.256Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-14T16:54:33.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReceptionistDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistDashboard.cs",
+              "RelativeDocumentMoniker": "Hospital-Management\\ReceptionistDashboard.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\ReceptionistDashboard.cs",
+              "RelativeToolTip": "Hospital-Management\\ReceptionistDashboard.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAtwCsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T16:46:48.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DoctorDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\DoctorDashboard.cs",
+              "RelativeDocumentMoniker": "Hospital-Management\\DoctorDashboard.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\hospital-management-c-sharp\\Hospital-Management\\DoctorDashboard.cs",
+              "RelativeToolTip": "Hospital-Management\\DoctorDashboard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T16:52:37.994Z"
             }
           ]
         }
