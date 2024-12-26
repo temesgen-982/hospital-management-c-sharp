@@ -127,6 +127,7 @@
     <Compile Include="NursePatientList.Designer.cs">
       <DependentUpon>NursePatientList.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordHasher.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="PatientRegistration.cs">
       <SubType>Form</SubType>
@@ -160,7 +161,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Data.cs" />
     <Compile Include="ReceptionistPatientList.cs">
       <SubType>Form</SubType>
     </Compile>

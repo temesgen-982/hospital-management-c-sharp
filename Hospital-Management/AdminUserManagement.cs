@@ -16,11 +16,9 @@ namespace Hospital_Management
         {
             InitializeComponent();
 
-            User user = new User();
+            Data users = new Data();
 
-            List<User> users = user.getUsers();
-
-            dataGridView1.DataSource = users;
+            users.LoadUsersIntoDataGridView(users.LoadDatabaseSchemaAndData(), dataGridView1);
         }
 
         private void homeButton_Click(object sender, EventArgs e)
