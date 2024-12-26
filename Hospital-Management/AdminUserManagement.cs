@@ -15,6 +15,10 @@ namespace Hospital_Management
         public AdminUserManagement()
         {
             InitializeComponent();
+
+            Data users = new Data();
+
+            users.LoadUsersIntoDataGridView(users.LoadDatabaseSchemaAndData(), dataGridView1);
         }
 
         private void homeButton_Click(object sender, EventArgs e)

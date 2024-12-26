@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Hospital_Management
 {
-    public partial class BillingManagement : Form
+    public partial class BillingOfficerDashboard : Form
     {
-        public BillingManagement()
+        public BillingOfficerDashboard()
         {
             InitializeComponent();
+
+            Billing billing = new Billing();
+
+            List<Billing> listData = billing.getBillings();
+
+            dataGridView1.DataSource = listData;
         }
     }
 }

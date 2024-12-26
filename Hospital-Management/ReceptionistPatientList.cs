@@ -15,6 +15,12 @@ namespace Hospital_Management
         public ReceptionistPatientList()
         {
             InitializeComponent();
+
+            Patient patient = new Patient();
+
+            List<Patient> patients = patient.getPatients();
+
+            dataGridView1.DataSource = patients;
         }
     }
 }
