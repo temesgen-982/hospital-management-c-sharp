@@ -72,58 +72,17 @@ namespace Hospital_Management
             string email = emailTextBox.Text;
             string phone = phoneTextBox.Text;
             string role = roleComboBox.Text;
+            string username = userNameTextBox.Text;
             DateTime dob = dobDateTimePicker.Value;
             string password = passwordTextBox.Text; // Consider hashing the password before storing it
 
-            // Validate input (basic example)
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email))
-            {
-                MessageBox.Show("Please fill in all required fields.");
-                return;
-            }
+            UserData userData = new UserData();
+            userData.UpdateUser(userId, firstName, lastName, username, email, phone, dob, password, role);
 
-            // Update the user in the database
-            string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    string updateQuery = "UPDATE Users SET first_name = @firstName, last_name = @lastName, email = @email, " +
-                                         "phone = @phone, role = @role, dob = @dob, password = @password WHERE user_id = @userId";
+            MessageBox.Show("Success");
 
-                    using (SqlCommand cmd = new SqlCommand(updateQuery, connection))
-                    {
-                        // Add parameters
-                        cmd.Parameters.AddWithValue("@firstName", firstName);
-                        cmd.Parameters.AddWithValue("@lastName", lastName);
-                        cmd.Parameters.AddWithValue("@email", email);
-                        cmd.Parameters.AddWithValue("@phone", phone);
-                        cmd.Parameters.AddWithValue("@role", role);
-                        cmd.Parameters.AddWithValue("@dob", dob);
-                        cmd.Parameters.AddWithValue("@password", password); // Consider hashing
-
-                        cmd.Parameters.AddWithValue("@userId", userId);
-
-                        // Execute the update command
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("User updated successfully.");
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Update failed.");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred during the update: {ex.Message}");
-                }
-            }
+            this.Hide();
+            
         }
     }
 }

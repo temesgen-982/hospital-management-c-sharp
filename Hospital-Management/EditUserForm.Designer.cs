@@ -45,6 +45,8 @@
             this.dobDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.userID = new System.Windows.Forms.Label();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -128,7 +130,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(97, 344);
+            this.button1.Location = new System.Drawing.Point(97, 367);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 34);
             this.button1.TabIndex = 12;
@@ -204,12 +206,31 @@
             this.userID.TabIndex = 38;
             this.userID.Text = "..";
             // 
+            // userNameTextBox
+            // 
+            this.userNameTextBox.Location = new System.Drawing.Point(141, 330);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(136, 20);
+            this.userNameTextBox.TabIndex = 40;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(62, 331);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 16);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Username";
+            // 
             // EditUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(350, 390);
+            this.ClientSize = new System.Drawing.Size(350, 413);
+            this.Controls.Add(this.userNameTextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.userID);
             this.Controls.Add(this.dobDateTimePicker);
             this.Controls.Add(this.label10);
@@ -254,5 +275,7 @@
         private System.Windows.Forms.DateTimePicker dobDateTimePicker;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label userID;
+        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.Label label6;
     }
 }

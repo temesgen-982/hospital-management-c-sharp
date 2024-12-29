@@ -127,7 +127,7 @@ namespace Hospital_Management
 
         private void signupBtn_Click(object sender, EventArgs e)
         {
-            SignupForm signup = new SignupForm();
+            SignupForm signup = new SignupForm("Sign up");
             signup.Show();
         }
     }

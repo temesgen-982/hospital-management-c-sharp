@@ -17,11 +17,14 @@ namespace Hospital_Management
         {
             InitializeComponent();
 
-            Patient patient = new Patient();
+            loadData();
+        }
 
-            List<Patient> patients = patient.getPatients();
+        private void loadData()
+        {
+            PatientData patientData = new PatientData();
+            patientData.LoadPatientsIntoDataGridView(patientData.LoadDatabaseSchemaAndData(), dataGridView1);
 
-            dataGridView1.DataSource = patients;
         }
 
         public void homeButton_Click(object sender, EventArgs e)

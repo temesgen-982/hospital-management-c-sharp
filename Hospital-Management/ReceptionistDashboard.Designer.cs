@@ -41,16 +41,19 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.lstNotifications);
-            this.groupBox1.Location = new System.Drawing.Point(492, 176);
+            this.groupBox1.Location = new System.Drawing.Point(687, 162);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(363, 245);
             this.groupBox1.TabIndex = 4;
@@ -72,16 +75,16 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtTotalPatients);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(316, 24);
+            this.groupBox2.Location = new System.Drawing.Point(227, 162);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(713, 125);
+            this.groupBox2.Size = new System.Drawing.Size(415, 245);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Statistics Overview";
             // 
             // txtAppointmentsBooked
             // 
-            this.txtAppointmentsBooked.Location = new System.Drawing.Point(520, 47);
+            this.txtAppointmentsBooked.Location = new System.Drawing.Point(211, 137);
             this.txtAppointmentsBooked.Name = "txtAppointmentsBooked";
             this.txtAppointmentsBooked.Size = new System.Drawing.Size(100, 20);
             this.txtAppointmentsBooked.TabIndex = 4;
@@ -91,7 +94,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(338, 50);
+            this.label2.Location = new System.Drawing.Point(29, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(166, 13);
             this.label2.TabIndex = 3;
@@ -99,7 +102,7 @@
             // 
             // txtTotalPatients
             // 
-            this.txtTotalPatients.Location = new System.Drawing.Point(208, 46);
+            this.txtTotalPatients.Location = new System.Drawing.Point(212, 100);
             this.txtTotalPatients.Name = "txtTotalPatients";
             this.txtTotalPatients.Size = new System.Drawing.Size(100, 20);
             this.txtTotalPatients.TabIndex = 2;
@@ -109,11 +112,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(6, 49);
+            this.label1.Location = new System.Drawing.Point(66, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 13);
+            this.label1.Size = new System.Drawing.Size(129, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Total Patients Registered Today/Week:";
+            this.label1.Text = "Total Patients Registered ";
             // 
             // Title
             // 
@@ -194,12 +197,34 @@
             this.panel1.Size = new System.Drawing.Size(180, 461);
             this.panel1.TabIndex = 17;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Hospital_Management.Properties.Resources.person;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(386, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(516, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(222, 20);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Welcome [Receptionist Name]";
+            // 
             // ReceptionistDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1084, 461);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -212,7 +237,9 @@
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -231,5 +258,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
