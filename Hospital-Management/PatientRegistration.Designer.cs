@@ -64,7 +64,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(439, 288);
+            this.textBox2.Location = new System.Drawing.Point(439, 294);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(230, 20);
             this.textBox2.TabIndex = 48;
@@ -72,7 +72,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(351, 295);
+            this.label6.Location = new System.Drawing.Point(351, 301);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 47;
@@ -82,9 +82,9 @@
             // 
             this.button6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(618, 349);
+            this.button6.Location = new System.Drawing.Point(593, 347);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(121, 36);
+            this.button6.Size = new System.Drawing.Size(76, 36);
             this.button6.TabIndex = 46;
             this.button6.Text = "Clear";
             this.button6.UseVisualStyleBackColor = false;
@@ -93,9 +93,9 @@
             // 
             this.button3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(439, 349);
+            this.button3.Location = new System.Drawing.Point(439, 347);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 36);
+            this.button3.Size = new System.Drawing.Size(130, 36);
             this.button3.TabIndex = 45;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = false;
@@ -113,7 +113,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(439, 252);
+            this.textBox5.Location = new System.Drawing.Point(439, 255);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(230, 20);
             this.textBox5.TabIndex = 43;
@@ -243,7 +243,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(351, 255);
+            this.label2.Location = new System.Drawing.Point(351, 258);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 37;
@@ -267,6 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1012, 450);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox2);

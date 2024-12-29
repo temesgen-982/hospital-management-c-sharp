@@ -118,3 +118,4 @@ E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Managem
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Management.csproj.CoreCompileInputs.cache
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Management.exe
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Management.pdb
+E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.EditUserForm.resources

@@ -35,9 +35,12 @@ namespace Hospital_Management
                 return;
             }
 
-            string connectionString = "Server=localhost;Database=hospitalDatabase;Integrated Security=True;";
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=hospitalDatabase;Integrated Security=True;";
 
-            string query = "SELECT Password, role_id FROM Users WHERE first_name = @username";
+            string query = @"
+                    SELECT password, role
+                    FROM Users
+                    WHERE username = @username";
 
             try
             {
@@ -47,19 +50,19 @@ namespace Hospital_Management
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@username", username);
+
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
                                 string storedPassword = reader["password"].ToString();
-                                string role = reader["role_id"].ToString();
+                                string role = reader["role"].ToString();
 
                                 if (storedPassword == password)
                                 {
                                     MessageBox.Show("Login successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     showRolePage(role);
-                                    
                                 }
                                 else
                                 {
@@ -80,35 +83,32 @@ namespace Hospital_Management
             }
         }
 
-        private void signupBtn_Click(object sender, EventArgs e)
-        {
-            signupForm signup = new signupForm();
-            signup.Show();
-        }
-
         private void showRolePage(string role)
         {
             switch (role)
             {
                 case "Admin":
-                    AdminDashboard ad = new AdminDashboard();
-                    ad.Show();
+                    AdminDashboard adminDashboard = new AdminDashboard();
+                    adminDashboard.Show();
                     break;
                 case "Doctor":
-                    DoctorDashboard dd = new DoctorDashboard();
-                    dd.Show();
+                    DoctorDashboard doctorDashboard = new DoctorDashboard();
+                    doctorDashboard.Show();
                     break;
                 case "Nurse":
-                    NurseDashboard nd = new NurseDashboard();
-                    nd.Show();
+                    NurseDashboard nurseDashboard = new NurseDashboard();
+                    nurseDashboard.Show();
                     break;
                 case "Receptionist":
-                    ReceptionistDashboard rd = new ReceptionistDashboard();
-                    rd.Show();
+                    ReceptionistDashboard receptionistDashboard = new ReceptionistDashboard();
+                    receptionistDashboard.Show();
                     break;
                 case "Billing Officer":
-                    BillingOfficerDashboard bd = new BillingOfficerDashboard();
-                    bd.Show();
+                    BillingOfficerDashboard billingOfficerDashboard = new BillingOfficerDashboard();
+                    billingOfficerDashboard.Show();
+                    break;
+                default:
+                    MessageBox.Show("Invalid role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
         }
@@ -123,6 +123,12 @@ namespace Hospital_Management
             {
                 textBox2.PasswordChar = '*';
             }
+        }
+
+        private void signupBtn_Click(object sender, EventArgs e)
+        {
+            SignupForm signup = new SignupForm();
+            signup.Show();
         }
     }
 }

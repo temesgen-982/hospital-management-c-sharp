@@ -66,6 +66,12 @@
     <Compile Include="AdminReportingTools.Designer.cs">
       <DependentUpon>AdminReportingTools.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminSignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSignupForm.Designer.cs">
+      <DependentUpon>AdminSignupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminSystemAlerts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,12 @@
     <Compile Include="BillingOfficerDashboard.Designer.cs">
       <DependentUpon>BillingOfficerDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="BillingOfficerSignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillingOfficerSignupForm.Designer.cs">
+      <DependentUpon>BillingOfficerSignupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoctorAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,18 @@
     </Compile>
     <Compile Include="DoctorDashboard.Designer.cs">
       <DependentUpon>DoctorDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorSignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorSignupForm.Designer.cs">
+      <DependentUpon>DoctorSignupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUserForm.Designer.cs">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NurseAppointments.cs">
       <SubType>Form</SubType>
@@ -127,6 +151,12 @@
     <Compile Include="NursePatientList.Designer.cs">
       <DependentUpon>NursePatientList.cs</DependentUpon>
     </Compile>
+    <Compile Include="NurseSignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NurseSignupForm.Designer.cs">
+      <DependentUpon>NurseSignupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PasswordHasher.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="PatientRegistration.cs">
@@ -147,11 +177,17 @@
     <Compile Include="ReceptionistDashboard.Designer.cs">
       <DependentUpon>ReceptionistDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="signupForm.cs">
+    <Compile Include="ReceptionistSignupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="signupForm.Designer.cs">
-      <DependentUpon>signupForm.cs</DependentUpon>
+    <Compile Include="ReceptionistSignupForm.Designer.cs">
+      <DependentUpon>ReceptionistSignupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignupForm.Designer.cs">
+      <DependentUpon>SignupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -192,6 +228,9 @@
     <EmbeddedResource Include="DoctorDashboard.resx">
       <DependentUpon>DoctorDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditUserForm.resx">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NurseAppointments.resx">
       <DependentUpon>NurseAppointments.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,8 +258,8 @@
     <EmbeddedResource Include="ReceptionistPatientList.resx">
       <DependentUpon>ReceptionistPatientList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="signupForm.resx">
-      <DependentUpon>signupForm.cs</DependentUpon>
+    <EmbeddedResource Include="SignupForm.resx">
+      <DependentUpon>SignupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

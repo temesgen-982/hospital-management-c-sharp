@@ -38,13 +38,17 @@
             this.Title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,6 +175,22 @@
             this.panel2.Size = new System.Drawing.Size(660, 100);
             this.panel2.TabIndex = 23;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Location = new System.Drawing.Point(469, 21);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(146, 59);
+            this.panel5.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Location = new System.Drawing.Point(257, 21);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(146, 59);
+            this.panel4.TabIndex = 1;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label2);
@@ -178,20 +198,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(146, 59);
             this.panel3.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(257, 21);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(146, 59);
-            this.panel4.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(469, 21);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(146, 59);
-            this.panel5.TabIndex = 1;
             // 
             // label2
             // 
@@ -201,6 +207,24 @@
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Active Users";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Active Users";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Active Users";
             // 
             // AdminDashboard
             // 
@@ -219,6 +243,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -242,5 +270,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

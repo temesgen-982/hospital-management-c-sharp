@@ -11,7 +11,7 @@ namespace Hospital_Management
 {
     class Data
     {
-        SqlConnection connection = new SqlConnection("Server = localhost; Database = hospitalDatabase; Integrated Security = True;");
+        SqlConnection connection = new SqlConnection("Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True;");
 
         public Data()
         {
@@ -132,6 +132,97 @@ namespace Hospital_Management
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred while loading Users table: {ex.Message}");
+            }
+        }
+
+        public void UpdateUser(int userId, string name, string email, int roleId, int departmentId)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "UPDATE Users SET name = @Name, email = @Email, role_id = @RoleId, department_id = @DepartmentId WHERE user_id = @UserId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@RoleId", roleId);
+                    command.Parameters.AddWithValue("@DepartmentId", departmentId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("User updated successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No user found with the specified ID.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while updating the user: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public void DeleteUser(int userId)
+        {
+            try
+            {
+                connection.Open();
+
+                // Delete dependent records
+                string deleteAppointmentsQuery = "DELETE FROM Appointments WHERE doctor_id = @UserId";
+                string deleteMedicalRecordsQuery = "DELETE FROM MedicalRecords WHERE doctor_id = @UserId";
+                string deleteBillingQuery = "DELETE FROM Billing WHERE patient_id IN (SELECT patient_id FROM Patients WHERE user_id = @UserId)";
+
+                using (SqlCommand command = new SqlCommand(deleteAppointmentsQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.ExecuteNonQuery();
+                }
+
+                using (SqlCommand command = new SqlCommand(deleteMedicalRecordsQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.ExecuteNonQuery();
+                }
+
+                using (SqlCommand command = new SqlCommand(deleteBillingQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.ExecuteNonQuery();
+                }
+
+                // Finally, delete the user
+                string deleteUserQuery = "DELETE FROM Users WHERE user_id = @UserId";
+                using (SqlCommand command = new SqlCommand(deleteUserQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("User deleted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No user found with the specified ID.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while deleting the user: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
