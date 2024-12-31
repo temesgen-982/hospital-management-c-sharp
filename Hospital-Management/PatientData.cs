@@ -222,5 +222,72 @@ namespace Hospital_Management
 
             return dataTable.Rows.Count > 0 ? dataTable : null;
         }
+
+        public DataTable GetPatientsByReceptionist(int receptionistId)
+        {
+            DataTable dataTable = new DataTable();
+
+            string query = @"
+                SELECT * 
+                FROM Patients
+                WHERE registered_by = @ReceptionistId";
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@ReceptionistId", receptionistId);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while retrieving patients: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dataTable.Rows.Count > 0 ? dataTable : null;
+        }
+
+        public int CountPatientsByReceptionist(int receptionistId)
+        {
+            int patientCount = 0;
+
+            try
+            {
+                connection.Open();
+                
+                string query = @"
+                    SELECT COUNT(*) 
+                    FROM Patients
+                    WHERE registered_by = @ReceptionistId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ReceptionistId", receptionistId);
+                    patientCount = Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while counting patients: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return patientCount;
+        }
+
+
     }
 }

@@ -12,9 +12,13 @@ namespace Hospital_Management
 {
     public partial class NursePatientList : Form
     {
-        public NursePatientList()
+        public int nurseId = 0;
+
+        public NursePatientList(int id)
         {
             InitializeComponent();
+
+            nurseId = id;
 
             loadData();
         }

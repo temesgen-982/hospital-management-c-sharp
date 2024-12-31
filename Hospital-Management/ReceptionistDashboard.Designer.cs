@@ -35,7 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtAppointmentsBooked = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTotalPatients = new System.Windows.Forms.TextBox();
+            this.totalPatientsTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.receptionistName = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,7 +88,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtAppointmentsBooked);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtTotalPatients);
+            this.groupBox2.Controls.Add(this.totalPatientsTextBox);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(257, 162);
             this.groupBox2.Name = "groupBox2";
@@ -127,12 +127,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Number of Appointments Booked";
             // 
-            // txtTotalPatients
+            // totalPatientsTextBox
             // 
-            this.txtTotalPatients.Location = new System.Drawing.Point(245, 100);
-            this.txtTotalPatients.Name = "txtTotalPatients";
-            this.txtTotalPatients.Size = new System.Drawing.Size(100, 20);
-            this.txtTotalPatients.TabIndex = 2;
+            this.totalPatientsTextBox.Location = new System.Drawing.Point(245, 100);
+            this.totalPatientsTextBox.Name = "totalPatientsTextBox";
+            this.totalPatientsTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalPatientsTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -235,15 +235,15 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // receptionistName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(516, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(222, 20);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Welcome [Receptionist Name]";
+            this.receptionistName.AutoSize = true;
+            this.receptionistName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receptionistName.Location = new System.Drawing.Point(516, 66);
+            this.receptionistName.Name = "receptionistName";
+            this.receptionistName.Size = new System.Drawing.Size(79, 20);
+            this.receptionistName.TabIndex = 19;
+            this.receptionistName.Text = "Welcome ";
             // 
             // ReceptionistDashboard
             // 
@@ -251,7 +251,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1084, 461);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.receptionistName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
@@ -278,7 +278,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtAppointmentsBooked;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTotalPatients;
+        private System.Windows.Forms.TextBox totalPatientsTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Button button1;
@@ -287,7 +287,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label receptionistName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
     }

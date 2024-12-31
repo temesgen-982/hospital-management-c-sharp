@@ -12,13 +12,17 @@ namespace Hospital_Management
 {
     public partial class BillingOfficerDashboard : Form
     {
-        public BillingOfficerDashboard()
+        public int billingOfficerId = 0;
+
+        public BillingOfficerDashboard(int id)
         {
             InitializeComponent();
 
-            Billing billing = new Billing();
+            billingOfficerId = id;
 
-            List<Billing> listData = billing.getBillings();
+            BillingData billing = new BillingData();
+
+            List<BillingData> listData = billing.getBillings();
 
             dataGridView1.DataSource = listData;
         }

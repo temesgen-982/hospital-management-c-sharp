@@ -12,9 +12,14 @@ namespace Hospital_Management
 {
     public partial class ReceptionistPatientList : Form
     {
-        public ReceptionistPatientList()
+
+        public int receptionistId = 0;
+
+        public ReceptionistPatientList(int id)
         {
             InitializeComponent();
+
+            receptionistId = id;
 
             loadData();
         }
@@ -40,7 +45,7 @@ namespace Hospital_Management
 
                 if (senderGrid.Columns[e.ColumnIndex].Name == "Edit")
                 {
-                    PatientInformation pr = new PatientInformation(patientId);
+                    PatientInformation pr = new PatientInformation(patientId, receptionistId);
                     pr.Show();
                     loadData();
                 }
@@ -111,21 +116,21 @@ namespace Hospital_Management
 
         private void homeButton_click(object sender, EventArgs e)
         {
-            ReceptionistDashboard rd = new ReceptionistDashboard();
+            ReceptionistDashboard rd = new ReceptionistDashboard(receptionistId);
             rd.Show();
             this.Hide();
         }
 
         private void patientRegistration_click(object sender, EventArgs e)
         {
-            PatientInformation pr = new PatientInformation(0);
+            PatientInformation pr = new PatientInformation(0, receptionistId);
             pr.Show();
             this.Hide();
         }
 
         private void AppointmentScheduling_click(object sender, EventArgs e)
         {
-            ReceptionistAppointmentScheduling asc = new ReceptionistAppointmentScheduling();
+            ReceptionistAppointmentScheduling asc = new ReceptionistAppointmentScheduling(receptionistId);
             asc.Show();
             this.Hide();
 

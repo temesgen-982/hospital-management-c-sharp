@@ -38,7 +38,7 @@ namespace Hospital_Management
             string connectionString = "Server=localhost\\SQLEXPRESS;Database=hospitalDatabase;Integrated Security=True;";
 
             string query = @"
-                    SELECT password, role
+                    SELECT user_id, password, role
                     FROM Users
                     WHERE username = @username";
 
@@ -57,12 +57,13 @@ namespace Hospital_Management
                             {
                                 string storedPassword = reader["password"].ToString();
                                 string role = reader["role"].ToString();
+                                int userId = Convert.ToInt32(reader["user_id"]);
 
                                 if (storedPassword == password)
                                 {
                                     MessageBox.Show("Login successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    showRolePage(role);
+                                    showRolePage(role, userId);
                                 }
                                 else
                                 {
@@ -83,28 +84,28 @@ namespace Hospital_Management
             }
         }
 
-        private void showRolePage(string role)
+        private void showRolePage(string role, int userId)
         {
             switch (role)
             {
                 case "Admin":
-                    AdminDashboard adminDashboard = new AdminDashboard();
+                    AdminDashboard adminDashboard = new AdminDashboard(userId);
                     adminDashboard.Show();
                     break;
                 case "Doctor":
-                    DoctorDashboard doctorDashboard = new DoctorDashboard();
+                    DoctorDashboard doctorDashboard = new DoctorDashboard(userId);
                     doctorDashboard.Show();
                     break;
                 case "Nurse":
-                    NurseDashboard nurseDashboard = new NurseDashboard();
+                    NurseDashboard nurseDashboard = new NurseDashboard(userId);
                     nurseDashboard.Show();
                     break;
                 case "Receptionist":
-                    ReceptionistDashboard receptionistDashboard = new ReceptionistDashboard();
+                    ReceptionistDashboard receptionistDashboard = new ReceptionistDashboard(userId);
                     receptionistDashboard.Show();
                     break;
                 case "Billing Officer":
-                    BillingOfficerDashboard billingOfficerDashboard = new BillingOfficerDashboard();
+                    BillingOfficerDashboard billingOfficerDashboard = new BillingOfficerDashboard(userId);
                     billingOfficerDashboard.Show();
                     break;
                 default:

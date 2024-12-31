@@ -98,6 +98,47 @@ namespace Hospital_Management
             dataGrid.DataSource = dataSet.Tables["Users"];
         }
 
+        public string GetUserFullName(int userId)
+        {
+            string fullName = null;
+
+            try
+            {
+                connection.Open();
+                
+                string query = @"
+                SELECT first_name, last_name 
+                FROM Users 
+                WHERE user_id = @UserId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string firstName = reader["first_name"].ToString();
+                            string lastName = reader["last_name"].ToString();
+                            fullName = $"{firstName} {lastName}";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while retrieving the user's full name: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return fullName ?? "User not found";
+        }
+
+
         public void InsertUser(string firstName, string lastName, string username, string email, string phone, DateTime dob, string password, string role)
         {
             try

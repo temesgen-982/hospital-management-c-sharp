@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Hospital_Management
 {
-    class Billing
+    class BillingData
     {
         SqlConnection connection = new SqlConnection("Server = localhost; Database = hospitalDatabase; Integrated Security = True;");
         public int BillId { get; set; }
@@ -22,9 +22,9 @@ namespace Hospital_Management
         public string Status { get; set; }
         public DateTime Date { get; set; }
 
-        public List<Billing> getBillings()
+        public List<BillingData> getBillings()
         {
-            List<Billing> listData = new List<Billing>();
+            List<BillingData> listData = new List<BillingData>();
 
             try
             {
@@ -42,7 +42,7 @@ namespace Hospital_Management
 
                     while (reader.Read())
                     {
-                        Billing billing = new Billing
+                        BillingData billing = new BillingData
                         {
                             BillId = (int)reader["bill_id"],
                             PatientId = (int)reader["patient_id"],

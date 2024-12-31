@@ -14,18 +14,22 @@ namespace Hospital_Management
 {
     public partial class PatientInformation : Form
     {
+
+        public int receptionistId = 0;
+
         public PatientInformation(int patientId, int userId)
         {
             InitializeComponent();
 
-            if (id == 0)
+            if (patientId == 0)
             {
                 ClearAllTextboxes();
+
+                receptionistId = userId;
             }
             else
             {
                 loadData(patientId);
-                button3.Text = "Update";
             }
         }
 
@@ -48,8 +52,8 @@ namespace Hospital_Management
                     while (reader.Read())
                     {
                         //patientId.Text = patientId.ToString();
-                        firstNameTextbox.Text = reader["first_name"].ToString();
-                        lastNameTextbox.Text = reader["last_name"].ToString();
+                        firstNameTextBox.Text = reader["first_name"].ToString();
+                        firstNameTextBox.Text = reader["last_name"].ToString();
                         emailTextBox.Text = reader["email"].ToString();
                         phoneTextBox.Text = reader["phone"].ToString();
                         dobDateTimePicker.Value = Convert.ToDateTime(reader["dob"]);
@@ -85,13 +89,12 @@ namespace Hospital_Management
         private void addPatientButton_Click(object sender, EventArgs e)
         {
             // Validate all fields are filled
-            if (string.IsNullOrWhiteSpace(firstNameTextbox.Text) ||
-                string.IsNullOrWhiteSpace(lastNameTextbox.Text) ||
+            if (string.IsNullOrWhiteSpace(firstNameTextBox.Text) ||
+                string.IsNullOrWhiteSpace(lastNameTextBox.Text) ||
                 string.IsNullOrWhiteSpace(addressTextBox.Text) ||
                 string.IsNullOrWhiteSpace(emailTextBox.Text) ||
                 string.IsNullOrWhiteSpace(contactTextBox.Text) ||
                 string.IsNullOrWhiteSpace(phoneTextBox.Text) ||
-                string.IsNullOrWhiteSpace(receptionistIdTextBox.Text) ||
                 !maleRadioButton.Checked && !femaleRadioButton.Checked ||
                 dobDateTimePicker.Value == null)
             {
@@ -99,13 +102,12 @@ namespace Hospital_Management
                 return;
             }
 
-            string firstName = firstNameTextbox.Text;
-            string lastName = lastNameTextbox.Text;
+            string firstName = firstNameTextBox.Text;
+            string lastName = lastNameTextBox.Text;
             string email = emailTextBox.Text;
             string phone = phoneTextBox.Text;
             string contactInfo = contactTextBox.Text;
             string address = addressTextBox.Text;
-            int receptionistId = int.Parse(receptionistIdTextBox.Text);
             char gender = maleRadioButton.Checked ? 'M' : 'F';
 
             // Now `selectedGender` holds the selected gender or remains empty if none is selected.
@@ -135,6 +137,5 @@ namespace Hospital_Management
             femaleRadioButton.Checked = false;
             dobDateTimePicker.Value = DateTime.Now;
         }
-
     }
 }

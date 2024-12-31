@@ -12,35 +12,39 @@ namespace Hospital_Management
 {
     public partial class AdminDashboard : Form
     {
-        public AdminDashboard()
+        public int adminId = 0;
+
+        public AdminDashboard(int id)
         {
             InitializeComponent();
+
+            adminId = id;
         }
 
         private void userManagement_Click(object sender, EventArgs e)
         {
-            AdminUserManagement um = new AdminUserManagement();
+            AdminUserManagement um = new AdminUserManagement(adminId);
             um.Show();
             this.Hide();
         }
 
         private void reportingTools_Click(object sender, EventArgs e)
         {
-            AdminReportingTools rt = new AdminReportingTools();
+            AdminReportingTools rt = new AdminReportingTools(adminId);
             rt.Show();
             this.Hide();
         }
 
         private void systemAlerts_Click(object sender, EventArgs e)
         {
-            AdminSystemAlerts sa = new AdminSystemAlerts();
+            AdminSystemAlerts sa = new AdminSystemAlerts(adminId);
             sa.Show();
             this.Hide();
         }
 
         private void performanceMetrics_Click(object sender, EventArgs e)
         {
-            AdminPerformanceMetrics pm = new AdminPerformanceMetrics();
+            AdminPerformanceMetrics pm = new AdminPerformanceMetrics(adminId);
             pm.Show();
             this.Hide();
         }
