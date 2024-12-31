@@ -131,7 +131,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(197, 25);
+            this.button5.Location = new System.Drawing.Point(181, 23);
             this.button5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(131, 22);
@@ -163,7 +163,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(214, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(827, 316);
+            this.panel1.Size = new System.Drawing.Size(827, 326);
             this.panel1.TabIndex = 18;
             // 
             // dataGridView1

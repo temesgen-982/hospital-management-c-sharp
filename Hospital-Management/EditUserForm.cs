@@ -47,6 +47,7 @@ namespace Hospital_Management
                         roleComboBox.Text = reader["role"].ToString();
                         dobDateTimePicker.Value = Convert.ToDateTime(reader["dob"]);
                         passwordTextBox.Text = reader["password"].ToString();
+                        userNameTextBox.Text = reader["username"].ToString();
                     }
 
                     reader.Close();

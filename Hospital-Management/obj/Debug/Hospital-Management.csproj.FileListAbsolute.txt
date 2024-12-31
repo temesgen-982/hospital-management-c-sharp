@@ -107,7 +107,6 @@ E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Managem
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.DoctorPatientDetails.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.DoctorPatientList.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.NursePatientList.resources
-E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.PatientRegistration.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.ReceptionistAppointmentScheduling.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.ReceptionistDashboard.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.ReceptionistPatientList.resources
@@ -119,3 +118,4 @@ E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Managem
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Management.exe
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Management.pdb
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.EditUserForm.resources
+E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.PatientInformation.resources

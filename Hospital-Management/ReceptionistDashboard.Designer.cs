@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.lstNotifications = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtAppointmentsBooked = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTotalPatients = new System.Windows.Forms.TextBox();
@@ -52,57 +54,82 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lstNotifications);
             this.groupBox1.Location = new System.Drawing.Point(687, 162);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 245);
+            this.groupBox1.Size = new System.Drawing.Size(363, 229);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Notifications";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(18, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Notifications";
             // 
             // lstNotifications
             // 
             this.lstNotifications.FormattingEnabled = true;
-            this.lstNotifications.Location = new System.Drawing.Point(6, 69);
+            this.lstNotifications.Location = new System.Drawing.Point(21, 80);
             this.lstNotifications.Name = "lstNotifications";
-            this.lstNotifications.Size = new System.Drawing.Size(351, 134);
+            this.lstNotifications.Size = new System.Drawing.Size(318, 108);
             this.lstNotifications.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtAppointmentsBooked);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtTotalPatients);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(227, 162);
+            this.groupBox2.Location = new System.Drawing.Point(257, 162);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(415, 245);
+            this.groupBox2.Size = new System.Drawing.Size(385, 229);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Statistics Overview";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(156, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Statistics Overview";
             // 
             // txtAppointmentsBooked
             // 
-            this.txtAppointmentsBooked.Location = new System.Drawing.Point(211, 137);
+            this.txtAppointmentsBooked.Location = new System.Drawing.Point(244, 137);
             this.txtAppointmentsBooked.Name = "txtAppointmentsBooked";
-            this.txtAppointmentsBooked.Size = new System.Drawing.Size(100, 20);
+            this.txtAppointmentsBooked.Size = new System.Drawing.Size(101, 20);
             this.txtAppointmentsBooked.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(29, 140);
+            this.label2.Location = new System.Drawing.Point(29, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 13);
+            this.label2.Size = new System.Drawing.Size(206, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Number of Appointments Booked:";
+            this.label2.Text = "Number of Appointments Booked";
             // 
             // txtTotalPatients
             // 
-            this.txtTotalPatients.Location = new System.Drawing.Point(212, 100);
+            this.txtTotalPatients.Location = new System.Drawing.Point(245, 100);
             this.txtTotalPatients.Name = "txtTotalPatients";
             this.txtTotalPatients.Size = new System.Drawing.Size(100, 20);
             this.txtTotalPatients.TabIndex = 2;
@@ -110,11 +137,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(66, 103);
+            this.label1.Location = new System.Drawing.Point(76, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 13);
+            this.label1.Size = new System.Drawing.Size(163, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Total Patients Registered ";
             // 
@@ -140,7 +168,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Patient Registration";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.patientRegistration_click);
+            this.button1.Click += new System.EventHandler(this.patientRegistrationButton_Click);
             // 
             // button5
             // 
@@ -168,7 +196,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Appointment Scheduling";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.AppointmentScheduling_click);
+            this.button2.Click += new System.EventHandler(this.appointmentSchedulingButton_Click);
             // 
             // button4
             // 
@@ -181,7 +209,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "View Patient List";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.ReceptionistPatientList);
+            this.button4.Click += new System.EventHandler(this.patientListButton_Click);
             // 
             // panel1
             // 
@@ -231,8 +259,8 @@
             this.Name = "ReceptionistDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReceptionistDashboard";
-            this.Load += new System.EventHandler(this.ReceptionistDashboard_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -260,5 +288,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

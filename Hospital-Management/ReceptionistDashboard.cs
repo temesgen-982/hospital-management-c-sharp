@@ -18,26 +18,21 @@ namespace Hospital_Management
             
         }
 
-        private void ReceptionistDashboard_Load(object sender, EventArgs e)
+        private void patientRegistrationButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void patientRegistration_click(object sender, EventArgs e)
-        {
-            PatientRegistration pr = new PatientRegistration();
+            PatientInformation pr = new PatientInformation(0);
             pr.Show();
             this.Hide();
         }
       
-        private void AppointmentScheduling_click(object sender, EventArgs e)
+        private void appointmentSchedulingButton_Click(object sender, EventArgs e)
         {
                 ReceptionistAppointmentScheduling asc = new ReceptionistAppointmentScheduling();
                 asc.Show();
                 this.Hide();
 
         }
-        private void ReceptionistPatientList( object sender, EventArgs e)
+        private void patientListButton_Click( object sender, EventArgs e)
         {
             ReceptionistPatientList pl = new ReceptionistPatientList();
             pl.Show();

@@ -84,7 +84,7 @@ namespace Hospital_Management
 
             UserData userData = new UserData();
 
-            dataGridView1.DataSource = userData.searchUser(searchText);
+            dataGridView1.DataSource = userData.SearchUser(searchText);
         }
 
         private void comboBoxFilter_SelectedIndexChanged(object sender, EventArgs e)

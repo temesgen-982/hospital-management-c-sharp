@@ -44,11 +44,22 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,8 +96,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 32);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Patient Registration";
+            this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.homeButton_Click);
             // 
             // button5
             // 
@@ -112,8 +124,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 32);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Appointment Scheduling";
+            this.button2.Text = "Patient Registration";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.patientRegistrationButton_click);
             // 
             // button4
             // 
@@ -126,6 +139,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "View Patient List";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.patientListButton_Click);
             // 
             // fileSystemWatcher1
             // 
@@ -140,7 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(277, 218);
+            this.label1.Location = new System.Drawing.Point(259, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 19;
@@ -148,13 +162,14 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(384, 148);
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
+            this.monthCalendar1.Location = new System.Drawing.Point(262, 108);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 20;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(629, 89);
+            this.button6.Location = new System.Drawing.Point(760, 72);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(114, 23);
             this.button6.TabIndex = 25;
@@ -163,7 +178,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(386, 91);
+            this.textBox1.Location = new System.Drawing.Point(533, 74);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(221, 20);
             this.textBox1.TabIndex = 24;
@@ -172,9 +187,9 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Location = new System.Drawing.Point(519, 353);
+            this.button7.Location = new System.Drawing.Point(776, 378);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(138, 36);
+            this.button7.Size = new System.Drawing.Size(125, 36);
             this.button7.TabIndex = 27;
             this.button7.Text = "Cancel Appointment";
             this.button7.UseVisualStyleBackColor = false;
@@ -183,24 +198,97 @@
             // 
             this.button8.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(337, 353);
+            this.button8.Location = new System.Drawing.Point(533, 378);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(138, 36);
+            this.button8.Size = new System.Drawing.Size(221, 36);
             this.button8.TabIndex = 28;
             this.button8.Text = "Book Appointment";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // label5
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button3.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(396, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(261, 36);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "Appointment Scheduling Page";
-            this.button3.UseVisualStyleBackColor = false;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Heebo", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label5.Location = new System.Drawing.Point(256, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(267, 31);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Appointment Scheduling";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9});
+            this.dataGridView1.Location = new System.Drawing.Point(533, 108);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(476, 241);
+            this.dataGridView1.TabIndex = 30;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "patient_id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "first_name";
+            this.Column2.HeaderText = "First Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "last_name";
+            this.Column3.HeaderText = "Last Name";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "gender";
+            this.Column4.HeaderText = "Gender";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "dob";
+            this.Column5.HeaderText = "DOB";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "phone";
+            this.Column6.HeaderText = "Phone";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "address";
+            this.Column7.HeaderText = "Address";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "email";
+            this.Column8.HeaderText = "Email";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "emergency_contact";
+            this.Column9.HeaderText = "Contact";
+            this.Column9.Name = "Column9";
             // 
             // ReceptionistAppointmentScheduling
             // 
@@ -208,7 +296,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1041, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -223,6 +312,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,6 +335,16 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

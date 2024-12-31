@@ -16,5 +16,11 @@ namespace Hospital_Management
         {
             InitializeComponent();
         }
+
+        private void patientListButton_Click(object sender, EventArgs e)
+        {
+            NursePatientList patientList = new NursePatientList();
+            patientList.Show();
+        }
     }
 }
