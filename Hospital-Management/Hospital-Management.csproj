@@ -78,7 +78,7 @@
     <Compile Include="AdminUserManagement.Designer.cs">
       <DependentUpon>AdminUserManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppointmetnsData.cs" />
+    <Compile Include="AppointmentsData.cs" />
     <Compile Include="BillingData.cs" />
     <Compile Include="BillingOfficerDashboard.cs">
       <SubType>Form</SubType>

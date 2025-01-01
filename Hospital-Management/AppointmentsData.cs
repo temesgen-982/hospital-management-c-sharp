@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital_Management
 {
-    class AppointmetnsData
+    class AppointmentsData
     {
     }
 }

@@ -13,12 +13,14 @@ namespace Hospital_Management
     public partial class DoctorPatientDetails : Form
     {
         public int doctorId = 0;
+        public int patientId = 0;
 
-        public DoctorPatientDetails(int id)
+        public DoctorPatientDetails(int doctorId, int patientId)
         {
             InitializeComponent();
 
-            doctorId = id;
+            this.doctorId = doctorId;
+            this.patientId = patientId;
         }
 
         public void homeButton_Click(object sender, EventArgs e)

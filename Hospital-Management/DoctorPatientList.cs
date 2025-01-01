@@ -30,6 +30,25 @@ namespace Hospital_Management
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+
+                int patientId = (int)(dataGridView1.Rows[e.RowIndex].Cells["patient_id"].Value);
+
+                if (senderGrid.Columns[e.ColumnIndex].Name == "Details")
+                {
+                    DoctorPatientDetails pd = new DoctorPatientDetails(doctorId, patientId);
+                    pd.Show();
+                    loadData();
+                }
+            }
+        }
+
         public void homeButton_Click(object sender, EventArgs e)
         {
             DoctorDashboard d = new DoctorDashboard(doctorId);
@@ -37,11 +56,5 @@ namespace Hospital_Management
             this.Hide();
         }
 
-        public void patientDetails_Click(object sender, EventArgs e)
-        {
-            DoctorPatientDetails pd = new DoctorPatientDetails(doctorId);
-            pd.Show();
-            this.Hide();
-        }
     }
 }

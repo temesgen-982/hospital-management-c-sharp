@@ -21,13 +21,6 @@ namespace Hospital_Management
             doctorId = id;
         }
 
-        public void patientDetails_Click(object sender, EventArgs e)
-        {
-            DoctorPatientDetails pd = new DoctorPatientDetails(doctorId);
-            pd.Show();
-            this.Hide();
-        }
-
         public void patientList_Click(object sender, EventArgs e)
         {
             DoctorPatientList pl = new DoctorPatientList(doctorId);
