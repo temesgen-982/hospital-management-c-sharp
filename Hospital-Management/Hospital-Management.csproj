@@ -79,6 +79,12 @@
       <DependentUpon>AdminUserManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="AppointmentsData.cs" />
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BillingData.cs" />
     <Compile Include="BillingOfficerDashboard.cs">
       <SubType>Form</SubType>
@@ -110,18 +116,6 @@
     <Compile Include="EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NurseAppointments.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NurseAppointments.Designer.cs">
-      <DependentUpon>NurseAppointments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NurseDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NurseDashboard.Designer.cs">
-      <DependentUpon>NurseDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="DoctorPatientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,12 +127,6 @@
     </Compile>
     <Compile Include="DoctorPatientList.Designer.cs">
       <DependentUpon>DoctorPatientList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NursePatientList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NursePatientList.Designer.cs">
-      <DependentUpon>NursePatientList.cs</DependentUpon>
     </Compile>
     <Compile Include="PasswordHasher.cs" />
     <Compile Include="PatientData.cs" />
@@ -211,20 +199,11 @@
     <EmbeddedResource Include="EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NurseAppointments.resx">
-      <DependentUpon>NurseAppointments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NurseDashboard.resx">
-      <DependentUpon>NurseDashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DoctorPatientDetails.resx">
       <DependentUpon>DoctorPatientDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorPatientList.resx">
       <DependentUpon>DoctorPatientList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NursePatientList.resx">
-      <DependentUpon>NursePatientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientInformation.resx">
       <DependentUpon>PatientInformation.cs</DependentUpon>
