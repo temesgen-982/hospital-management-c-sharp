@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data.SqlClient;
+
 namespace Hospital_Management
 {
     public partial class AdminPerformanceMetrics : Form
@@ -19,6 +21,8 @@ namespace Hospital_Management
             InitializeComponent();
 
             adminId = id;
+
+            LoadCounts();
         }
 
         private void homeButton_Click(object sender, EventArgs e)
@@ -35,18 +39,51 @@ namespace Hospital_Management
             this.Hide();
         }
 
-        private void reportingTools_Click(object sender, EventArgs e)
-        {
-            AdminReportingTools rt = new AdminReportingTools(adminId);
-            rt.Show();
-            this.Hide();
-        }
-
         private void systemAlerts_Click(object sender, EventArgs e)
         {
             AdminSystemAlerts sa = new AdminSystemAlerts(adminId);
             sa.Show();
             this.Hide();
+        }
+        private void LoadCounts()
+        {
+            string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to count records
+                    string query = @"
+                    SELECT
+                        (SELECT COUNT(*) FROM Patients) AS TotalPatients,
+                        (SELECT COUNT(*) FROM Doctors) AS TotalDoctors,
+                        (SELECT COUNT(*) FROM Users) AS TotalUsers,
+                        (SELECT COUNT(*) FROM Appointments) AS TotalAppointments;
+                ";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Assign values to textboxes
+                                patientsTextBox.Text = reader["TotalPatients"].ToString();
+                                doctorsTextBox.Text = reader["TotalDoctors"].ToString();
+                                usersTextBox.Text = reader["TotalUsers"].ToString();
+                                appointmentsTextBox.Text = reader["TotalAppointments"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+            }
         }
     }
 }

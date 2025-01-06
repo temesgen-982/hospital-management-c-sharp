@@ -96,17 +96,12 @@ E:\C#\hospital-management-c-sharp\Hospital-Management\bin\Debug\Hospital-Managem
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital-Management.csprojAssemblyReference.cache
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.AdminDashboard.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.AdminPerformanceMetrics.resources
-E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.AdminReportingTools.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.AdminSystemAlerts.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.AdminUserManagement.resources
-E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.BillingOfficerDashboard.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.DoctorAppointments.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.DoctorDashboard.resources
-E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.NurseAppointments.resources
-E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.NurseDashboard.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.DoctorPatientDetails.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.DoctorPatientList.resources
-E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.NursePatientList.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.ReceptionistAppointmentScheduling.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.ReceptionistDashboard.resources
 E:\C#\hospital-management-c-sharp\Hospital-Management\obj\Debug\Hospital_Management.ReceptionistPatientList.resources

@@ -96,17 +96,9 @@ namespace Hospital_Management
                     DoctorDashboard doctorDashboard = new DoctorDashboard(userId);
                     doctorDashboard.Show();
                     break;
-                case "Nurse":
-                    NurseDashboard nurseDashboard = new NurseDashboard(userId);
-                    nurseDashboard.Show();
-                    break;
                 case "Receptionist":
                     ReceptionistDashboard receptionistDashboard = new ReceptionistDashboard(userId);
                     receptionistDashboard.Show();
-                    break;
-                case "Billing Officer":
-                    BillingOfficerDashboard billingOfficerDashboard = new BillingOfficerDashboard(userId);
-                    billingOfficerDashboard.Show();
                     break;
                 default:
                     MessageBox.Show("Invalid role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

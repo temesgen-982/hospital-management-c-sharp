@@ -60,12 +60,6 @@
     <Compile Include="AdminPerformanceMetrics.Designer.cs">
       <DependentUpon>AdminPerformanceMetrics.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminReportingTools.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminReportingTools.Designer.cs">
-      <DependentUpon>AdminReportingTools.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminSystemAlerts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,13 +78,6 @@
     </Compile>
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BillingData.cs" />
-    <Compile Include="BillingOfficerDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BillingOfficerDashboard.Designer.cs">
-      <DependentUpon>BillingOfficerDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DoctorAppointments.cs">
       <SubType>Form</SubType>
@@ -175,17 +162,11 @@
     <EmbeddedResource Include="AdminPerformanceMetrics.resx">
       <DependentUpon>AdminPerformanceMetrics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminReportingTools.resx">
-      <DependentUpon>AdminReportingTools.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminSystemAlerts.resx">
       <DependentUpon>AdminSystemAlerts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUserManagement.resx">
       <DependentUpon>AdminUserManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BillingOfficerDashboard.resx">
-      <DependentUpon>BillingOfficerDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorAppointments.resx">
       <DependentUpon>DoctorAppointments.cs</DependentUpon>

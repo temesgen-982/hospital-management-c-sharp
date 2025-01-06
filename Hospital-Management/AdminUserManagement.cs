@@ -120,13 +120,6 @@ namespace Hospital_Management
             this.Hide();
         }
 
-        private void reportingTools_Click(object sender, EventArgs e)
-        {
-            AdminReportingTools rt = new AdminReportingTools(adminId);
-            rt.Show();
-            this.Hide();
-        }
-
         private void systemAlerts_Click(object sender, EventArgs e)
         {
             AdminSystemAlerts sa = new AdminSystemAlerts(adminId);

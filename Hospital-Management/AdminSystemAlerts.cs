@@ -35,13 +35,6 @@ namespace Hospital_Management
             this.Hide();
         }
 
-        private void reportingTools_Click(object sender, EventArgs e)
-        {
-            AdminReportingTools rt = new AdminReportingTools(adminId);
-            rt.Show();
-            this.Hide();
-        }
-
         private void performanceMetrics_Click(object sender, EventArgs e)
         {
             AdminPerformanceMetrics pm = new AdminPerformanceMetrics(adminId);
