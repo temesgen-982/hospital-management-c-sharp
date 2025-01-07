@@ -19,6 +19,12 @@ namespace Hospital_Management
             InitializeComponent();
 
             doctorId = id;
+
+            UserData userData = new UserData();
+
+            doctorName.Text += userData.GetUserFullName(id);
+
+            profilePictureBox.Image = userData.GetProfileImage(id);
         }
 
         public void patientList_Click(object sender, EventArgs e)

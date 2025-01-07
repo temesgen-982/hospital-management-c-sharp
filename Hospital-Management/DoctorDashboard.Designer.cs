@@ -28,32 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.doctorName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // doctorName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(501, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Welcome Dr. [doctor name]";
+            this.doctorName.AutoSize = true;
+            this.doctorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doctorName.Location = new System.Drawing.Point(501, 70);
+            this.doctorName.Name = "doctorName";
+            this.doctorName.Size = new System.Drawing.Size(104, 20);
+            this.doctorName.TabIndex = 14;
+            this.doctorName.Text = "Welcome Dr. ";
             // 
             // button1
             // 
@@ -92,16 +87,6 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Reporting";
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(360, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(300, 20);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Number of patients currently under care : ";
             // 
             // button5
             // 
@@ -143,36 +128,15 @@
             this.Title.TabIndex = 8;
             this.Title.Text = "Hospital\r\nManagement\r\nSystem";
             // 
-            // dataGridView1
+            // profilePictureBox
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(364, 206);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(338, 206);
-            this.dataGridView1.TabIndex = 18;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Patient Name";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Age";
-            this.Column2.Name = "Column2";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Hospital_Management.Properties.Resources.person;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(364, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.profilePictureBox.BackgroundImage = global::Hospital_Management.Properties.Resources.person;
+            this.profilePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.profilePictureBox.Location = new System.Drawing.Point(364, 29);
+            this.profilePictureBox.Name = "profilePictureBox";
+            this.profilePictureBox.Size = new System.Drawing.Size(100, 100);
+            this.profilePictureBox.TabIndex = 17;
+            this.profilePictureBox.TabStop = false;
             // 
             // DoctorDashboard
             // 
@@ -180,18 +144,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1084, 461);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.doctorName);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.profilePictureBox);
             this.Name = "DoctorDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoctorDashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,17 +160,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label doctorName;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox profilePictureBox;
     }
 }

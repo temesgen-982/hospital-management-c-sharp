@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
+using System.IO;
+using System.Drawing;
+
 namespace Hospital_Management
 {
     class PatientData
@@ -23,13 +26,11 @@ namespace Hospital_Management
             {
                 connection.Open();
 
-                // Define queries for each relevant table
                 string[] tableQueries = new string[]
                 {
                     "SELECT * FROM Patients",
                     "SELECT * FROM Appointments",
-                    "SELECT * FROM MedicalRecords",
-                    "SELECT * FROM Billing"
+                    "SELECT * FROM MedicalRecords"
                 };
 
                 using (SqlDataAdapter adapter = new SqlDataAdapter())
@@ -43,23 +44,17 @@ namespace Hospital_Management
                 }
 
                 // Define relationships between tables
-                dataSet.Relations.Add(new DataRelation(
-                    "PatientsAppointments",
-                    dataSet.Tables["Patients"].Columns["patient_id"],
-                    dataSet.Tables["Appointments"].Columns["patient_id"]
-                ));
+                //dataSet.Relations.Add(new DataRelation(
+                //    "PatientsAppointments",
+                //    dataSet.Tables["Patients"].Columns["patient_id"],
+                //    dataSet.Tables["Appointments"].Columns["patient_id"]
+                //));
 
-                dataSet.Relations.Add(new DataRelation(
-                    "PatientsMedicalRecords",
-                    dataSet.Tables["Patients"].Columns["patient_id"],
-                    dataSet.Tables["MedicalRecords"].Columns["patient_id"]
-                ));
-
-                dataSet.Relations.Add(new DataRelation(
-                    "PatientsBilling",
-                    dataSet.Tables["Patients"].Columns["patient_id"],
-                    dataSet.Tables["Billing"].Columns["patient_id"]
-                ));
+                //dataSet.Relations.Add(new DataRelation(
+                //    "PatientsMedicalRecords",
+                //    dataSet.Tables["Patients"].Columns["patient_id"],
+                //    dataSet.Tables["MedicalRecords"].Columns["patient_id"]
+                //));
             }
             catch (Exception ex)
             {
@@ -78,16 +73,15 @@ namespace Hospital_Management
             dataGrid.DataSource = dataSet.Tables["Patients"];
         }
 
-        public void InsertPatient(string firstName, string lastName, DateTime dob, char gender, string phone, string address, string email, string emergencyContact, int receptionistId)
+        public void InsertPatient(string firstName, string lastName, DateTime dob, char gender, string phone, string address, string email, string emergencyContact, int receptionistId, byte[] profileImage = null)
         {
             try
             {
                 connection.Open();
 
-                // Insert into Patients table
                 string query = @"
-        INSERT INTO Patients (first_name, last_name, dob, gender, phone, address, email, emergency_contact, registered_by)
-        VALUES (@FirstName, @LastName, @Dob, @Gender, @Phone, @Address, @Email, @EmergencyContact, @ReceptionistId);";
+                    INSERT INTO Patients (first_name, last_name, dob, gender, phone, address, email, emergency_contact, registered_by, profile_image)
+                    VALUES (@FirstName, @LastName, @Dob, @Gender, @Phone, @Address, @Email, @EmergencyContact, @ReceptionistId, @ProfileImage);";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -97,9 +91,10 @@ namespace Hospital_Management
                     command.Parameters.AddWithValue("@Gender", gender);
                     command.Parameters.AddWithValue("@Phone", phone);
                     command.Parameters.AddWithValue("@Address", address);
-                    command.Parameters.AddWithValue("@Email", email ?? (object)DBNull.Value); // Allow null values for email
+                    command.Parameters.AddWithValue("@Email", email ?? (object)DBNull.Value);
                     command.Parameters.AddWithValue("@EmergencyContact", emergencyContact);
                     command.Parameters.AddWithValue("@ReceptionistId", receptionistId);
+                    command.Parameters.AddWithValue("@ProfileImage", (object)profileImage ?? DBNull.Value);
 
                     command.ExecuteNonQuery();
                     Console.WriteLine("Patient added successfully.");
@@ -115,24 +110,24 @@ namespace Hospital_Management
             }
         }
 
-        public void UpdatePatient(int patientId, string firstName, string lastName, DateTime dob, string gender, string phone, string address, string email, string emergencyContact)
+        public void UpdatePatient(int patientId, string firstName, string lastName, DateTime dob, char gender, string phone, string address, string email, string emergencyContact, byte[] profileImage = null)
         {
             try
             {
                 connection.Open();
 
-                // Update the Patients table
                 string query = @"
-                UPDATE Patients
-                SET first_name = @FirstName,
-                    last_name = @LastName,
-                    dob = @Dob,
-                    gender = @Gender,
-                    phone = @Phone,
-                    address = @Address,
-                    email = @Email,
-                    emergency_contact = @EmergencyContact
-                WHERE patient_id = @PatientId";
+                    UPDATE Patients
+                    SET first_name = @FirstName,
+                        last_name = @LastName,
+                        dob = @Dob,
+                        gender = @Gender,
+                        phone = @Phone,
+                        address = @Address,
+                        email = @Email,
+                        emergency_contact = @EmergencyContact,
+                        profile_image = @ProfileImage
+                    WHERE patient_id = @PatientId";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -140,11 +135,12 @@ namespace Hospital_Management
                     command.Parameters.AddWithValue("@FirstName", firstName);
                     command.Parameters.AddWithValue("@LastName", lastName);
                     command.Parameters.AddWithValue("@Dob", dob);
-                    command.Parameters.AddWithValue("@Gender", gender.ToString());
+                    command.Parameters.AddWithValue("@Gender", gender);
                     command.Parameters.AddWithValue("@Phone", phone);
                     command.Parameters.AddWithValue("@Address", address);
-                    command.Parameters.AddWithValue("@Email", email ?? (object)DBNull.Value); // Allow null values for email
+                    command.Parameters.AddWithValue("@Email", email ?? (object)DBNull.Value);
                     command.Parameters.AddWithValue("@EmergencyContact", emergencyContact);
+                    command.Parameters.AddWithValue("@ProfileImage", (object)profileImage ?? DBNull.Value);
 
                     int rowsAffected = command.ExecuteNonQuery();
                     Console.WriteLine(rowsAffected > 0 ? "Patient updated successfully." : "No patient found with the specified ID.");
@@ -288,6 +284,40 @@ namespace Hospital_Management
             return patientCount;
         }
 
+        public Image GetProfileImage(int patientId)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT profile_image FROM Patients WHERE patient_id = @PatientId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PatientId", patientId);
+
+                    var result = command.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        byte[] imageData = (byte[])result;
+                        using (var ms = new MemoryStream(imageData))
+                        {
+                            return Image.FromStream(ms);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while retrieving the profile image: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return null; // Return null if no image found
+        }
 
     }
 }

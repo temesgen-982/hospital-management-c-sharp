@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 using System.Data.SqlClient;
 
+using System.IO;
+
 namespace Hospital_Management
 {
     public partial class SignupForm : Form
     {
+
+        private string selectedImagePath = null;
 
         public SignupForm(string txt)
         {
@@ -56,10 +60,77 @@ namespace Hospital_Management
             DateTime dob = dobDateTimePicker.Value;
             string password = passwordTextBox.Text;
 
-            UserData userData = new UserData();
-            userData.InsertUser(firstName, lastName, username, email, phone, dob, password, role);
+            if (selectedImagePath == null)
+            {
+                MessageBox.Show("Please upload a profile picture!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            MessageBox.Show("User registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            byte[] profileImage = File.ReadAllBytes(selectedImagePath);
+
+            try
+            {
+                UserData userData = new UserData();
+                userData.InsertUser(firstName, lastName, username, email, phone, dob, password, role, profileImage);
+
+                MessageBox.Show("User registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Clear fields after successful registration
+                //ClearForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred during registration: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void uploadImageButton_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.Title = "Select a Profile Picture";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    selectedImagePath = openFileDialog.FileName;
+
+                    // Load the selected image into the PictureBox
+                    profilePictureBox.Image = Image.FromFile(selectedImagePath);
+                }
+            }
+        }
+
+        private void backToLoginButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
+
+        private void password_CheckedChange(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                passwordTextBox.PasswordChar = '\0';
+            }
+            else
+            {
+                passwordTextBox.PasswordChar = '*';
+            }
+        }
+
+        private void confirmPassword_CheckedChange(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                confirmPasswordTextBox.PasswordChar = '\0';
+            }
+            else
+            {
+                confirmPasswordTextBox.PasswordChar = '*';
+            }
         }
     }
 }

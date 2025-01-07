@@ -26,6 +26,8 @@ namespace Hospital_Management
 
             adminName.Text += userData.GetUserFullName(id);
 
+            profilePictureBox.Image = userData.GetProfileImage(id);
+
             LoadCounts();
         }
 

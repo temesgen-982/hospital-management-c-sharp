@@ -42,6 +42,8 @@
             this.signupButton = new System.Windows.Forms.Button();
             this.roleComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.uploadImageButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.dobDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,9 +55,12 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.profilePictureBox = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -73,7 +78,7 @@
             this.titleLable.AutoSize = true;
             this.titleLable.Font = new System.Drawing.Font("Heebo", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLable.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.titleLable.Location = new System.Drawing.Point(541, 47);
+            this.titleLable.Location = new System.Drawing.Point(539, 28);
             this.titleLable.Name = "titleLable";
             this.titleLable.Size = new System.Drawing.Size(134, 47);
             this.titleLable.TabIndex = 14;
@@ -162,7 +167,7 @@
             this.signupButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.signupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.signupButton.Location = new System.Drawing.Point(526, 389);
+            this.signupButton.Location = new System.Drawing.Point(523, 417);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(189, 32);
             this.signupButton.TabIndex = 32;
@@ -187,6 +192,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.uploadImageButton);
+            this.panel1.Controls.Add(this.profilePictureBox);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dobDateTimePicker);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.firstNameTextBox);
@@ -201,8 +209,28 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(304, 111);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 257);
+            this.panel1.Size = new System.Drawing.Size(275, 287);
             this.panel1.TabIndex = 34;
+            // 
+            // uploadImageButton
+            // 
+            this.uploadImageButton.Location = new System.Drawing.Point(106, 251);
+            this.uploadImageButton.Name = "uploadImageButton";
+            this.uploadImageButton.Size = new System.Drawing.Size(99, 23);
+            this.uploadImageButton.TabIndex = 37;
+            this.uploadImageButton.Text = "Upload Image";
+            this.uploadImageButton.UseVisualStyleBackColor = true;
+            this.uploadImageButton.Click += new System.EventHandler(this.uploadImageButton_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(13, 254);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 16);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Profile Image";
             // 
             // dobDateTimePicker
             // 
@@ -234,7 +262,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(631, 111);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(258, 257);
+            this.panel2.Size = new System.Drawing.Size(258, 287);
             this.panel2.TabIndex = 35;
             // 
             // checkBox2
@@ -246,6 +274,7 @@
             this.checkBox2.TabIndex = 39;
             this.checkBox2.Text = "show password";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.confirmPassword_CheckedChange);
             // 
             // confirmPasswordTextBox
             // 
@@ -291,6 +320,7 @@
             this.checkBox1.TabIndex = 34;
             this.checkBox1.Text = "show password";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.password_CheckedChange);
             // 
             // passwordTextBox
             // 
@@ -298,7 +328,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(189, 20);
-            this.passwordTextBox.TabIndex = 33;
+            this.passwordTextBox.TabIndex = 37;
             // 
             // label6
             // 
@@ -310,12 +340,36 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "Password";
             // 
+            // profilePictureBox
+            // 
+            this.profilePictureBox.Location = new System.Drawing.Point(211, 244);
+            this.profilePictureBox.Name = "profilePictureBox";
+            this.profilePictureBox.Size = new System.Drawing.Size(37, 30);
+            this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePictureBox.TabIndex = 36;
+            this.profilePictureBox.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(226, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 39);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "<";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.backToLoginButton_Click);
+            // 
             // SignupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1084, 461);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.signupButton);
@@ -329,6 +383,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,5 +415,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dobDateTimePicker;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button uploadImageButton;
+        private System.Windows.Forms.PictureBox profilePictureBox;
+        private System.Windows.Forms.Button button1;
     }
 }

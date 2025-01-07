@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Hospital_Management
 {
@@ -16,6 +17,9 @@ namespace Hospital_Management
     {
 
         public int receptionistId = 0;
+
+
+        private string selectedImagePath = null;
 
         public PatientInformation(int patientId, int userId)
         {
@@ -25,7 +29,8 @@ namespace Hospital_Management
             {
                 ClearAllTextboxes();
 
-                receptionistId = userId;
+                UserData userData = new UserData();
+                receptionistId = userData.GetReceptionistIdByUserId(userId);
             }
             else
             {
@@ -110,17 +115,30 @@ namespace Hospital_Management
             string address = addressTextBox.Text;
             char gender = maleRadioButton.Checked ? 'M' : 'F';
 
-            // Now `selectedGender` holds the selected gender or remains empty if none is selected.
+            if (selectedImagePath == null)
+            {
+                MessageBox.Show("Please upload a profile picture!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            byte[] profileImage = File.ReadAllBytes(selectedImagePath);
 
             DateTime dob = dobDateTimePicker.Value;
 
+            try
+            {
+                PatientData patientData = new PatientData();
+                patientData.InsertPatient(firstName, lastName, dob, gender, phone, address, email, contactInfo, receptionistId, profileImage);
 
-            PatientData patientData = new PatientData();
-            patientData.InsertPatient(firstName, lastName, dob, gender, phone, address, email, contactInfo, receptionistId);
+                MessageBox.Show("patient registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            MessageBox.Show("patient registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            ClearAllTextboxes();
+                ClearAllTextboxes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred during registration: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void ClearAllTextboxes()
@@ -136,6 +154,21 @@ namespace Hospital_Management
             maleRadioButton.Checked = false;
             femaleRadioButton.Checked = false;
             dobDateTimePicker.Value = DateTime.Now;
+        }
+
+        private void uploadImageButton_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.Title = "Select a Profile Picture";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    selectedImagePath = openFileDialog.FileName;
+                    
+                }
+            }
         }
     }
 }

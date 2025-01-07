@@ -45,6 +45,7 @@ namespace Hospital_Management
             sa.Show();
             this.Hide();
         }
+
         private void LoadCounts()
         {
             string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";

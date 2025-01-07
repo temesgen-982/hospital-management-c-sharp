@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 using System.Data;
 using System.Data.SqlClient;
-using System;
-using System.Data;
-using System.Data.SqlClient;
+
+using System.IO;
+using System.Drawing;
 
 namespace Hospital_Management
 {
@@ -25,19 +25,13 @@ namespace Hospital_Management
             {
                 connection.Open();
 
-                // Define queries for each relevant table
+                // Define updated query for Users table with new fields
                 string[] tableQueries = new string[]
                 {
                     "SELECT * FROM Users",
                     "SELECT * FROM Doctors",
-                    "SELECT * FROM Nurses",
                     "SELECT * FROM Receptionists",
-                    "SELECT * FROM BillingOfficers",
-                    "SELECT * FROM Admins",
-                    "SELECT * FROM Patients",
-                    "SELECT * FROM Appointments",
-                    "SELECT * FROM MedicalRecords",
-                    "SELECT * FROM Billing"
+                    "SELECT * FROM Admins"
                 };
 
                 using (SqlDataAdapter adapter = new SqlDataAdapter())
@@ -49,37 +43,6 @@ namespace Hospital_Management
                         adapter.Fill(dataSet, tableName);
                     }
                 }
-
-                // Define relationships between tables
-                dataSet.Relations.Add(new DataRelation(
-                    "UsersDoctors",
-                    dataSet.Tables["Users"].Columns["user_id"],
-                    dataSet.Tables["Doctors"].Columns["user_id"]
-                ));
-
-                dataSet.Relations.Add(new DataRelation(
-                    "UsersNurses",
-                    dataSet.Tables["Users"].Columns["user_id"],
-                    dataSet.Tables["Nurses"].Columns["user_id"]
-                ));
-
-                dataSet.Relations.Add(new DataRelation(
-                    "UsersReceptionists",
-                    dataSet.Tables["Users"].Columns["user_id"],
-                    dataSet.Tables["Receptionists"].Columns["user_id"]
-                ));
-
-                dataSet.Relations.Add(new DataRelation(
-                    "UsersBillingOfficers",
-                    dataSet.Tables["Users"].Columns["user_id"],
-                    dataSet.Tables["BillingOfficers"].Columns["user_id"]
-                ));
-
-                dataSet.Relations.Add(new DataRelation(
-                    "UsersAdmins",
-                    dataSet.Tables["Users"].Columns["user_id"],
-                    dataSet.Tables["Admins"].Columns["user_id"]
-                ));
             }
             catch (Exception ex)
             {
@@ -138,29 +101,28 @@ namespace Hospital_Management
             return fullName ?? "User not found";
         }
 
-
-        public void InsertUser(string firstName, string lastName, string username, string email, string phone, DateTime dob, string password, string role)
+        public void InsertUser(string firstName, string lastName, string username, string email, string phone, DateTime dob, string password, string role, byte[] profileImage = null)
         {
             try
             {
                 connection.Open();
 
-                // Insert into Users table
                 string query = @"
-                INSERT INTO Users (first_name, last_name, username, dob, email, phone, password, role)
-                VALUES (@FirstName, @LastName, @Username, @DateOfBirth, @Email, @Phone, @Password, @Role);
-                SELECT SCOPE_IDENTITY();";
+        INSERT INTO Users (first_name, last_name, username, dob, email, phone, password, role, profile_image)
+        VALUES (@FirstName, @LastName, @Username, @Dob, @Email, @Phone, @Password, @Role, @ProfileImage);
+        SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@FirstName", firstName);
                     command.Parameters.AddWithValue("@LastName", lastName);
                     command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@DateOfBirth", dob);
+                    command.Parameters.AddWithValue("@Dob", dob);
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@Phone", phone);
-                    command.Parameters.AddWithValue("@Password", password); // Hash password in production
+                    command.Parameters.AddWithValue("@Password", password);
                     command.Parameters.AddWithValue("@Role", role);
+                    command.Parameters.AddWithValue("@ProfileImage", (object)profileImage ?? DBNull.Value);
 
                     int userId = Convert.ToInt32(command.ExecuteScalar());
                     AssignToRole(connection, userId, role);
@@ -176,6 +138,7 @@ namespace Hospital_Management
             }
         }
 
+
         private void AssignToRole(SqlConnection connection, int userId, string role)
         {
             string roleTable;
@@ -185,14 +148,8 @@ namespace Hospital_Management
                 case "Doctor":
                     roleTable = "Doctors";
                     break;
-                case "Nurse":
-                    roleTable = "Nurses";
-                    break;
                 case "Receptionist":
                     roleTable = "Receptionists";
-                    break;
-                case "Billing Officer":
-                    roleTable = "BillingOfficers";
                     break;
                 case "Admin":
                     roleTable = "Admins";
@@ -210,24 +167,26 @@ namespace Hospital_Management
             }
         }
 
-        public void UpdateUser(int userId, string firstName, string lastName, string username, string email, string phone, DateTime dob, string password, string role)
+        public void UpdateUser(int userId, string firstName, string lastName, string username, string email, string phone, DateTime dob, string password, string role, string imagePath = null)
         {
             try
             {
                 connection.Open();
 
-                // Update the Users table
+                byte[] profileImage = imagePath != null ? File.ReadAllBytes(imagePath) : null;
+
                 string query = @"
-        UPDATE Users 
-        SET first_name = @FirstName, 
-            last_name = @LastName, 
-            username = @Username, 
-            email = @Email, 
-            phone = @Phone, 
-            dob = @Dob, 
-            password = @Password, 
-            role = @Role
-        WHERE user_id = @UserId";
+                UPDATE Users 
+                SET first_name = @FirstName, 
+                    last_name = @LastName, 
+                    username = @Username, 
+                    email = @Email, 
+                    phone = @Phone, 
+                    dob = @Dob, 
+                    password = @Password, 
+                    role = @Role,
+                    profile_image = @ProfileImage
+                WHERE user_id = @UserId";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -238,8 +197,9 @@ namespace Hospital_Management
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@Phone", phone);
                     command.Parameters.AddWithValue("@Dob", dob);
-                    command.Parameters.AddWithValue("@Password", password); // Hash in production
+                    command.Parameters.AddWithValue("@Password", password);
                     command.Parameters.AddWithValue("@Role", role);
+                    command.Parameters.AddWithValue("@ProfileImage", (object)profileImage ?? DBNull.Value);
 
                     int rowsAffected = command.ExecuteNonQuery();
                     Console.WriteLine(rowsAffected > 0 ? "User updated successfully." : "No user found with the specified ID.");
@@ -319,5 +279,101 @@ namespace Hospital_Management
             return dataTable.Rows.Count > 0 ? dataTable : null;
         }
 
+        public Image GetProfileImage(int userId)
+        {
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT profile_image FROM Users WHERE user_id = @UserId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+
+                    var result = command.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        byte[] imageData = (byte[])result;
+                        using (var ms = new MemoryStream(imageData))
+                        {
+                            return Image.FromStream(ms);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while retrieving the profile image: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return null; // Return null if no image found
+        }
+
+        public int GetReceptionistIdByUserId(int userId)
+        {
+            int receptionistId = 0;
+
+            string query = "SELECT receptionist_id FROM Receptionists WHERE user_id = @UserId";
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    var result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        receptionistId = Convert.ToInt32(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while retrieving receptionist ID: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return receptionistId;
+        }
+
+        public int GetDoctorIdByUserId(int userId)
+        {
+            int doctorId = 0;
+
+            string query = "SELECT doctor_id FROM Doctors WHERE user_id = @UserId";
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    var result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        doctorId = Convert.ToInt32(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while retrieving doctor ID: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return doctorId;
+        }
     }
 }
