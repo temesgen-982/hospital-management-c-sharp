@@ -78,7 +78,7 @@ namespace Hospital_Management
             string password = passwordTextBox.Text;
 
             UserData userData = new UserData();
-            userData.UpdateUser(userId, firstName, lastName, username, email, phone, dob, password, role);
+            userData.UpdateUser(userId, firstName, lastName, username, email, phone, dob, PasswordHasher.HashPassword(password), role);
 
             MessageBox.Show("Success");
 

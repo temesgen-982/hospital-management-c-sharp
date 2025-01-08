@@ -42,8 +42,7 @@ namespace Hospital_Management
                 MessageBox.Show("All fields are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Validate if passwords match
+            
             if (passwordTextBox.Text != confirmPasswordTextBox.Text)
             {
                 MessageBox.Show("Passwords do not match!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -57,7 +56,19 @@ namespace Hospital_Management
             string role = roleComboBox.Text;
             string username = usernameTextBox.Text;
             DateTime dob = dobDateTimePicker.Value;
-            string password = passwordTextBox.Text;
+            string password = PasswordHasher.HashPassword(passwordTextBox.Text);
+
+            if (!IsValidEmail(emailTextBox.Text))
+            {
+                MessageBox.Show("Invalid email format!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!IsValidPhoneNumber(phoneTextBox.Text))
+            {
+                MessageBox.Show("Phone number can only contain digits and '+' sign!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (selectedImagePath == null)
             {
@@ -98,6 +109,25 @@ namespace Hospital_Management
                     profilePictureBox.Image = Image.FromFile(selectedImagePath);
                 }
             }
+        }
+
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool IsValidPhoneNumber(string phone)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(phone, @"^\+?\d*$");
         }
 
         private void backToLoginButton_Click(object sender, EventArgs e)

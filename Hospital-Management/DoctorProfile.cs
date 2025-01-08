@@ -15,7 +15,7 @@ namespace Hospital_Management
     public partial class DoctorProfile : Form
     {
         public int doctorId = 0;
-
+        public string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
         public DoctorProfile(int id)
         {
             InitializeComponent();
@@ -44,7 +44,6 @@ namespace Hospital_Management
 
             try
             {
-                string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -73,7 +72,7 @@ namespace Hospital_Management
                     using (SqlCommand updateUsersCommand = new SqlCommand(updateUsersQuery, connection))
                     {
                         updateUsersCommand.Parameters.AddWithValue("@Username", username);
-                        updateUsersCommand.Parameters.AddWithValue("@Password", password);
+                        updateUsersCommand.Parameters.AddWithValue("@Password", PasswordHasher.HashPassword(password));
                         updateUsersCommand.Parameters.AddWithValue("@DoctorId", doctorId);
                         updateUsersCommand.ExecuteNonQuery();
                     }
@@ -92,7 +91,7 @@ namespace Hospital_Management
 
         private void LoadDoctorProfile()
         {
-            string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
+            
             string query = @"
         SELECT u.first_name, u.last_name, u.dob, u.username, u.password, d.specialty, d.years_of_experience
         FROM Users u

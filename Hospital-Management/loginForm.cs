@@ -14,6 +14,8 @@ namespace Hospital_Management
 {
     public partial class LoginForm : Form
     {
+        public string connectionString = "Server=localhost\\SQLEXPRESS;Database=hospitalDatabase;Integrated Security=True;";
+
         public LoginForm()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace Hospital_Management
                 return;
             }
 
-            string connectionString = "Server=localhost\\SQLEXPRESS;Database=hospitalDatabase;Integrated Security=True;";
+            
 
             string query = @"
                     SELECT user_id, password, role
@@ -59,7 +61,7 @@ namespace Hospital_Management
                                 string role = reader["role"].ToString();
                                 int userId = Convert.ToInt32(reader["user_id"]);
 
-                                if (storedPassword == password)
+                                if (storedPassword == PasswordHasher.HashPassword(password))
                                 {
                                     MessageBox.Show("Login successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

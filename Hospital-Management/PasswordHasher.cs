@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 using System.Security.Cryptography;
 
-namespace databaseTest4
+namespace Hospital_Management
 {
-    class PasswordHasher
+    public class PasswordHasher
     {
         public static string HashPassword(string password)
         {

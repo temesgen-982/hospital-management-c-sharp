@@ -43,6 +43,7 @@
             this.roleComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.uploadImageButton = new System.Windows.Forms.Button();
+            this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dobDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,12 +56,11 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.profilePictureBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -181,9 +181,7 @@
             this.roleComboBox.Items.AddRange(new object[] {
             "Admin",
             "Doctor",
-            "Nurse",
-            "Receptionist",
-            "Billing Officer"});
+            "Receptionist"});
             this.roleComboBox.Location = new System.Drawing.Point(107, 177);
             this.roleComboBox.Name = "roleComboBox";
             this.roleComboBox.Size = new System.Drawing.Size(135, 21);
@@ -221,6 +219,15 @@
             this.uploadImageButton.Text = "Upload Image";
             this.uploadImageButton.UseVisualStyleBackColor = true;
             this.uploadImageButton.Click += new System.EventHandler(this.uploadImageButton_Click);
+            // 
+            // profilePictureBox
+            // 
+            this.profilePictureBox.Location = new System.Drawing.Point(211, 244);
+            this.profilePictureBox.Name = "profilePictureBox";
+            this.profilePictureBox.Size = new System.Drawing.Size(37, 30);
+            this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePictureBox.TabIndex = 36;
+            this.profilePictureBox.TabStop = false;
             // 
             // label5
             // 
@@ -340,15 +347,6 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "Password";
             // 
-            // profilePictureBox
-            // 
-            this.profilePictureBox.Location = new System.Drawing.Point(211, 244);
-            this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(37, 30);
-            this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profilePictureBox.TabIndex = 36;
-            this.profilePictureBox.TabStop = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -381,9 +379,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
