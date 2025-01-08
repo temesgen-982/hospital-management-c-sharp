@@ -28,6 +28,8 @@ namespace Hospital_Management
 
             totalPatientsTextBox.Text = patientData.CountPatientsByReceptionist(userData.GetReceptionistIdByUserId(id)).ToString();
 
+            profilePictureBox.Image = userData.GetProfileImage(id);
+
             AppointmentsData appointmentsData = new AppointmentsData();
 
             txtAppointmentsBooked.Text = appointmentsData.CountAppointmentsByReceptionist(userData.GetReceptionistIdByUserId(id)).ToString();
@@ -37,7 +39,6 @@ namespace Hospital_Management
         {
             PatientInformation pr = new PatientInformation(0, receptionistId);
             pr.Show();
-            this.Hide();
         }
       
         private void appointmentSchedulingButton_Click(object sender, EventArgs e)

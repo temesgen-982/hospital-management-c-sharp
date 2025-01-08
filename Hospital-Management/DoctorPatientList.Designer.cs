@@ -138,6 +138,7 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "Logout";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // button4
             // 
@@ -150,6 +151,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "View Appointments";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.appointments_Click);
             // 
             // button3
             // 
@@ -162,6 +164,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Edit Profile";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.editProfile_Click);
             // 
             // panel1
             // 

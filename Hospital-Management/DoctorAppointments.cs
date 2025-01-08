@@ -80,9 +80,17 @@ namespace Hospital_Management
 
         public void patientList_Click(object sender, EventArgs e)
         {
-            DoctorPatientList pl = new DoctorPatientList(doctorId);
+            DoctorPatientList pl = new DoctorPatientList(userId);
             pl.Show();
             this.Hide();
+        }
+
+        public void editProfile_Click(object sender, EventArgs e)
+        {
+            UserData userData = new UserData();
+
+            DoctorProfile dp = new DoctorProfile(doctorId);
+            dp.Show();
         }
 
         public void logoutButton_Click(object sender, EventArgs e)

@@ -60,5 +60,27 @@ namespace Hospital_Management
         {
             Details.DisplayIndex = dataGridView1.Columns.Count - 1;
         }
+
+        public void appointments_Click(object sender, EventArgs e)
+        {
+            DoctorAppointments ap = new DoctorAppointments(doctorId);
+            ap.Show();
+            this.Hide();
+        }
+
+        public void editProfile_Click(object sender, EventArgs e)
+        {
+            UserData userData = new UserData();
+
+            DoctorProfile dp = new DoctorProfile(userData.GetDoctorIdByUserId(doctorId));
+            dp.Show();
+        }
+
+        public void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

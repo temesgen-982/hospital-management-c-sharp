@@ -125,7 +125,6 @@ namespace Hospital_Management
         {
             PatientInformation pr = new PatientInformation(0, receptionistId);
             pr.Show();
-            this.Hide();
         }
 
         private void AppointmentScheduling_click(object sender, EventArgs e)
@@ -141,6 +140,12 @@ namespace Hospital_Management
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             this.Hide();
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            Delete.DisplayIndex = dataGridView1.Columns.Count - 1;
+            Edit.DisplayIndex = dataGridView1.Columns.Count - 2;
         }
     }
 }

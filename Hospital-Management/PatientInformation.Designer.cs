@@ -258,6 +258,7 @@
             this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.label13);
             this.Name = "PatientInformation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PatientInformation";
             this.ResumeLayout(false);
             this.PerformLayout();

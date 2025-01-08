@@ -16,7 +16,10 @@ namespace Hospital_Management
     {
         public int doctorId = 0;
         public int patientId = 0;
+        public int userId = 0;
 
+        public string connectionString = "Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True; ";
+        
         public DoctorPatientDetails(int doctorId, int patientId)
         {
             InitializeComponent();
@@ -24,6 +27,7 @@ namespace Hospital_Management
             UserData userData = new UserData();
             this.doctorId = userData.GetDoctorIdByUserId(doctorId);
             this.patientId = patientId;
+            this.userId = doctorId;
 
             dataGridView1.DataSource = GetPatientDiagnosis(patientId);
             dataGridView2.DataSource = GetPatientTreatment(patientId);
@@ -68,7 +72,7 @@ namespace Hospital_Management
 
         private void loadData(int patientId)
         {
-            SqlConnection connection = new SqlConnection("Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True;");
+            SqlConnection connection = new SqlConnection(connectionString);
 
             try
             {
@@ -122,7 +126,6 @@ namespace Hospital_Management
         {
             DataTable diagnosisTable = new DataTable();
 
-            string connectionString = "Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True; ";
             string query = "SELECT diagnosis FROM MedicalRecords WHERE patient_id = @PatientId";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -145,7 +148,6 @@ namespace Hospital_Management
         {
             DataTable treatmentTable = new DataTable();
 
-            string connectionString = "Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True; ";
             string query = "SELECT treatment FROM MedicalRecords WHERE patient_id = @PatientId";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
