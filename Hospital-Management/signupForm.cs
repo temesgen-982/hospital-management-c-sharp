@@ -29,7 +29,6 @@ namespace Hospital_Management
 
         private void signupButton_Click(object sender, EventArgs e)
         {
-            // Validate all fields are filled
             if (string.IsNullOrWhiteSpace(firstNameTextBox.Text) ||
                 string.IsNullOrWhiteSpace(lastNameTextBox.Text) ||
                 string.IsNullOrWhiteSpace(emailTextBox.Text) ||
@@ -95,8 +94,7 @@ namespace Hospital_Management
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     selectedImagePath = openFileDialog.FileName;
-
-                    // Load the selected image into the PictureBox
+                    
                     profilePictureBox.Image = Image.FromFile(selectedImagePath);
                 }
             }

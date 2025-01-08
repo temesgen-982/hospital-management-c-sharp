@@ -132,6 +132,33 @@ namespace Hospital_Management
             return groupedAppointments;
         }
 
+        public int CountAppointmentsByReceptionist(int receptionistId)
+        {
+            int appointmentCount = 0;
+            string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand("CountAppointmentsByReceptionist", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Add("@ReceptionistId", SqlDbType.Int).Value = receptionistId;
+
+                        connection.Open();
+                        appointmentCount = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error counting appointments by receptionist.", ex);
+            }
+
+            return appointmentCount;
+        }
+
 
 
     }

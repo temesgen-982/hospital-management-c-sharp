@@ -259,16 +259,12 @@ namespace Hospital_Management
 
             try
             {
-                connection.Open();
-                
-                string query = @"
-                    SELECT COUNT(*) 
-                    FROM Patients
-                    WHERE registered_by = @ReceptionistId";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand("CountPatientsByReceptionist", connection))
                 {
+                    command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@ReceptionistId", receptionistId);
+
+                    connection.Open();
                     patientCount = Convert.ToInt32(command.ExecuteScalar());
                 }
             }
@@ -316,7 +312,7 @@ namespace Hospital_Management
                 connection.Close();
             }
 
-            return null; // Return null if no image found
+            return null;
         }
 
     }

@@ -26,7 +26,11 @@ namespace Hospital_Management
 
             receptionistName.Text += userData.GetUserFullName(id);
 
-            totalPatientsTextBox.Text = patientData.CountPatientsByReceptionist(id).ToString();
+            totalPatientsTextBox.Text = patientData.CountPatientsByReceptionist(userData.GetReceptionistIdByUserId(id)).ToString();
+
+            AppointmentsData appointmentsData = new AppointmentsData();
+
+            txtAppointmentsBooked.Text = appointmentsData.CountAppointmentsByReceptionist(userData.GetReceptionistIdByUserId(id)).ToString();
         }
 
         private void patientRegistrationButton_Click(object sender, EventArgs e)
