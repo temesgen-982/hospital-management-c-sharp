@@ -40,6 +40,9 @@ namespace Hospital_Management
             medicalRecordsData.InsertMedicalRecord(patientId, doctorId, diagnosisTextBox.Text, treatmentTextBox.Text);
 
             MessageBox.Show("Record added");
+
+            dataGridView1.DataSource = GetPatientDiagnosis(patientId);
+            dataGridView2.DataSource = GetPatientTreatment(patientId);
         }
 
         public void homeButton_Click(object sender, EventArgs e)

@@ -174,5 +174,12 @@ namespace Hospital_Management
             rd.Show();
             this.Hide();
         }
+
+        public void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

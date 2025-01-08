@@ -53,5 +53,11 @@ namespace Hospital_Management
             pl.Show();
             this.Hide();
         }
+        public void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

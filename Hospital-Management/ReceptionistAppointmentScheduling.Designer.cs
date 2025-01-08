@@ -58,13 +58,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.doctor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.years = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SelectDoctor = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -125,6 +125,7 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "Logout";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // button2
             // 
@@ -335,17 +336,6 @@
             this.dataGridView2.TabIndex = 32;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Heebo", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(664, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 31);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Select a Doctor";
-            // 
             // doctor_id
             // 
             this.doctor_id.DataPropertyName = "doctor_id";
@@ -381,6 +371,17 @@
             this.SelectDoctor.Name = "SelectDoctor";
             this.SelectDoctor.Text = "Select";
             this.SelectDoctor.UseColumnTextForButtonValue = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Heebo", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(664, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 31);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Select a Doctor";
             // 
             // ReceptionistAppointmentScheduling
             // 

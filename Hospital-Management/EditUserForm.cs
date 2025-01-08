@@ -14,6 +14,8 @@ namespace Hospital_Management
 {
     public partial class EditUserForm : Form
     {
+        public SqlConnection connection = new SqlConnection("Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True;");
+
         public EditUserForm(int userId)
         {
             InitializeComponent();
@@ -23,7 +25,6 @@ namespace Hospital_Management
 
         private void loadData(int userId)
         {
-            SqlConnection connection = new SqlConnection("Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True;");
 
             try
             {
@@ -66,8 +67,7 @@ namespace Hospital_Management
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            // Gather data from form controls
-            int userId = int.Parse(userID.Text); // Assuming userIDLabel contains only the userId
+            int userId = int.Parse(userID.Text);
             string firstName = firstNameTextBox.Text;
             string lastName = lastNameTextBox.Text;
             string email = emailTextBox.Text;
@@ -75,7 +75,7 @@ namespace Hospital_Management
             string role = roleComboBox.Text;
             string username = userNameTextBox.Text;
             DateTime dob = dobDateTimePicker.Value;
-            string password = passwordTextBox.Text; // Consider hashing the password before storing it
+            string password = passwordTextBox.Text;
 
             UserData userData = new UserData();
             userData.UpdateUser(userId, firstName, lastName, username, email, phone, dob, password, role);

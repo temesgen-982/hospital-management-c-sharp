@@ -85,6 +85,8 @@ namespace Hospital_Management
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+
+            this.Hide();
         }
 
 

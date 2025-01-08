@@ -91,14 +91,17 @@ namespace Hospital_Management
                 case "Admin":
                     AdminDashboard adminDashboard = new AdminDashboard(userId);
                     adminDashboard.Show();
+                    this.Hide();
                     break;
                 case "Doctor":
                     DoctorDashboard doctorDashboard = new DoctorDashboard(userId);
                     doctorDashboard.Show();
+                    this.Hide();
                     break;
                 case "Receptionist":
                     ReceptionistDashboard receptionistDashboard = new ReceptionistDashboard(userId);
                     receptionistDashboard.Show();
+                    this.Hide();
                     break;
                 default:
                     MessageBox.Show("Invalid role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -122,6 +125,7 @@ namespace Hospital_Management
         {
             SignupForm signup = new SignupForm("Sign up");
             signup.Show();
+            this.Hide();
         }
     }
 }

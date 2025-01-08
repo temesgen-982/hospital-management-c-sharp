@@ -11,11 +11,11 @@ namespace Hospital_Management
 {
     class AppointmentsData
     {
+        public string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
+
         public DataTable GetAppointments(int doctorId, DateTime? appointmentDate = null)
         {
             DataTable appointments = new DataTable();
-            string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
-
 
             string query = @"
         SELECT appointment_id, patient_id, status, appointment_date 
@@ -58,9 +58,7 @@ namespace Hospital_Management
         public DataTable GetAppointmentsGroupedByPatient(int doctorId)
         {
             DataTable groupedAppointments = new DataTable();
-            string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
 
-            // Query to group appointments by patient_id
             string query = @"
         SELECT patient_id, 
                COUNT(appointment_id) AS appointment_count,
@@ -96,9 +94,7 @@ namespace Hospital_Management
         public DataTable GetAppointmentsGroupedByDate(int doctorId)
         {
             DataTable groupedAppointments = new DataTable();
-            string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
 
-            // Query to group appointments by appointment_date
             string query = @"
         SELECT CAST(appointment_date AS DATE) AS appointment_date, 
                COUNT(appointment_id) AS appointment_count,
@@ -135,7 +131,7 @@ namespace Hospital_Management
         public int CountAppointmentsByReceptionist(int receptionistId)
         {
             int appointmentCount = 0;
-            string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
+            
 
             try
             {

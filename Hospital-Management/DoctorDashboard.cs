@@ -55,6 +55,12 @@ namespace Hospital_Management
 
             DoctorProfile dp = new DoctorProfile(userData.GetDoctorIdByUserId(doctorId));
             dp.Show();
+        }
+
+        public void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
             this.Hide();
         }
     }

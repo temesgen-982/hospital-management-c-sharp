@@ -18,6 +18,7 @@ namespace Hospital_Management
 
         public int receptionistId = 0;
 
+        public SqlConnection connection = new SqlConnection("Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True;");
 
         private string selectedImagePath = null;
 
@@ -40,7 +41,6 @@ namespace Hospital_Management
 
         private void loadData(int patientId)
         {
-            SqlConnection connection = new SqlConnection("Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True;");
 
             try
             {

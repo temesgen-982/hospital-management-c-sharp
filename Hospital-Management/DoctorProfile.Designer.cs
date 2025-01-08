@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 450);
+            this.ClientSize = new System.Drawing.Size(602, 450);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.usernameTextBox);
@@ -209,6 +209,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.profilePictureBox);
             this.Name = "DoctorProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoctorProfile";
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.ResumeLayout(false);

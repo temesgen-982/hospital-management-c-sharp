@@ -144,5 +144,12 @@ namespace Hospital_Management
             SignupForm signup = new SignupForm("Add User");
             signup.Show();
         }
+
+        public void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

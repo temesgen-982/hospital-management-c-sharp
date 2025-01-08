@@ -56,5 +56,9 @@ namespace Hospital_Management
             this.Hide();
         }
 
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            Details.DisplayIndex = dataGridView1.Columns.Count - 1;
+        }
     }
 }

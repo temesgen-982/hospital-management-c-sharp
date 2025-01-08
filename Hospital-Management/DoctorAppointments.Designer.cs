@@ -249,6 +249,7 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "Logout";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // dataGridView2
             // 
@@ -267,6 +268,7 @@
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(491, 150);
             this.dataGridView2.TabIndex = 36;
+            this.dataGridView2.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView2_DataBindingComplete);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -323,6 +325,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(491, 150);
             this.dataGridView1.TabIndex = 37;
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView2_DataBindingComplete);
             // 
             // dataGridViewTextBoxColumn4
             // 

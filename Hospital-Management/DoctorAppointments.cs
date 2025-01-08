@@ -13,6 +13,7 @@ namespace Hospital_Management
     public partial class DoctorAppointments : Form
     {
         public int doctorId = 0;
+        public int userId = 0;
 
         public DoctorAppointments(int id)
         {
@@ -20,6 +21,7 @@ namespace Hospital_Management
 
             UserData userData = new UserData();
             doctorId = userData.GetDoctorIdByUserId(id);
+            userId = id;
 
             AppointmentsData appointmentsData = new AppointmentsData();
             DataTable todaysAppointments = appointmentsData.GetAppointments(this.doctorId, DateTime.Today);
@@ -71,7 +73,7 @@ namespace Hospital_Management
 
         public void homeButton_Click(object sender, EventArgs e)
         {
-            DoctorDashboard d = new DoctorDashboard(doctorId);
+            DoctorDashboard d = new DoctorDashboard(userId);
             d.Show();
             this.Hide();
         }
@@ -81,6 +83,19 @@ namespace Hospital_Management
             DoctorPatientList pl = new DoctorPatientList(doctorId);
             pl.Show();
             this.Hide();
+        }
+
+        public void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
+
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewButtonColumn2.DisplayIndex = dataGridView1.Columns.Count - 1;
+            dataGridViewButtonColumn1.DisplayIndex = dataGridView1.Columns.Count - 2;
         }
     }
 }

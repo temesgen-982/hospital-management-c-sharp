@@ -16,6 +16,8 @@ namespace Hospital_Management
     {
         public int adminId = 0;
 
+        public string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
+
         public AdminDashboard(int id)
         {
             InitializeComponent();
@@ -54,7 +56,6 @@ namespace Hospital_Management
 
         private void LoadCounts()
         {
-            string connectionString = "Server=localhost\\SQLEXPRESS; Database=hospitalDatabase; Integrated Security=True;";
 
             try
             {
@@ -90,6 +91,12 @@ namespace Hospital_Management
             {
                 MessageBox.Show("Error loading data: " + ex.Message);
             }
+        }
+        public void logoutButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }
