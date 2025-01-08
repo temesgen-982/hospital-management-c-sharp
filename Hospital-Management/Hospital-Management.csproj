@@ -91,11 +91,11 @@
     <Compile Include="DoctorDashboard.Designer.cs">
       <DependentUpon>DoctorDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoctorsList.cs">
+    <Compile Include="DoctorProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorsList.Designer.cs">
-      <DependentUpon>DoctorsList.cs</DependentUpon>
+    <Compile Include="DoctorProfile.Designer.cs">
+      <DependentUpon>DoctorProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="EditUserForm.cs">
       <SubType>Form</SubType>
@@ -103,11 +103,11 @@
     <Compile Include="EditUserForm.Designer.cs">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoctorAddMedicalRecord.cs">
+    <Compile Include="DoctorPatientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorAddMedicalRecord.Designer.cs">
-      <DependentUpon>DoctorAddMedicalRecord.cs</DependentUpon>
+    <Compile Include="DoctorPatientDetails.Designer.cs">
+      <DependentUpon>DoctorPatientDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="DoctorPatientList.cs">
       <SubType>Form</SubType>
@@ -175,14 +175,14 @@
     <EmbeddedResource Include="DoctorDashboard.resx">
       <DependentUpon>DoctorDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoctorsList.resx">
-      <DependentUpon>DoctorsList.cs</DependentUpon>
+    <EmbeddedResource Include="DoctorProfile.resx">
+      <DependentUpon>DoctorProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoctorAddMedicalRecord.resx">
-      <DependentUpon>DoctorAddMedicalRecord.cs</DependentUpon>
+    <EmbeddedResource Include="DoctorPatientDetails.resx">
+      <DependentUpon>DoctorPatientDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorPatientList.resx">
       <DependentUpon>DoctorPatientList.cs</DependentUpon>

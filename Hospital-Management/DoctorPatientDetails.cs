@@ -12,18 +12,24 @@ using System.Data.SqlClient;
 
 namespace Hospital_Management
 {
-    public partial class DoctorAddMedicalRecord : Form
+    public partial class DoctorPatientDetails : Form
     {
         public int doctorId = 0;
         public int patientId = 0;
 
-        public DoctorAddMedicalRecord(int doctorId, int patientId)
+        public DoctorPatientDetails(int doctorId, int patientId)
         {
             InitializeComponent();
 
             UserData userData = new UserData();
             this.doctorId = userData.GetDoctorIdByUserId(doctorId);
             this.patientId = patientId;
+
+            dataGridView1.DataSource = GetPatientDiagnosis(patientId);
+            dataGridView2.DataSource = GetPatientTreatment(patientId);
+
+            PatientData patientData = new PatientData();
+            profilePictureBox.Image = patientData.GetProfileImage(patientId);
 
             loadData(patientId);
         }
@@ -107,6 +113,52 @@ namespace Hospital_Management
             if (dob > today.AddYears(-age)) age--;
 
             return age;
+        }
+
+        public DataTable GetPatientDiagnosis(int patientId)
+        {
+            DataTable diagnosisTable = new DataTable();
+
+            string connectionString = "Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True; ";
+            string query = "SELECT diagnosis FROM MedicalRecords WHERE patient_id = @PatientId";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PatientId", patientId);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(diagnosisTable);
+                    }
+                }
+            }
+
+            return diagnosisTable;
+        }
+
+        public DataTable GetPatientTreatment(int patientId)
+        {
+            DataTable treatmentTable = new DataTable();
+
+            string connectionString = "Server = localhost\\SQLEXPRESS; Database = hospitalDatabase; Integrated Security = True; ";
+            string query = "SELECT treatment FROM MedicalRecords WHERE patient_id = @PatientId";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PatientId", patientId);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(treatmentTable);
+                    }
+                }
+            }
+
+            return treatmentTable;
         }
 
     }

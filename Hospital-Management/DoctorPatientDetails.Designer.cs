@@ -1,6 +1,6 @@
 ﻿namespace Hospital_Management
 {
-    partial class DoctorAddMedicalRecord
+    partial class DoctorPatientDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,13 @@
             this.treatmentTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button7
@@ -110,7 +116,7 @@
             this.profilePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.profilePictureBox.Location = new System.Drawing.Point(51, 63);
             this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(100, 100);
+            this.profilePictureBox.Size = new System.Drawing.Size(100, 90);
             this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePictureBox.TabIndex = 27;
             this.profilePictureBox.TabStop = false;
@@ -143,7 +149,7 @@
             this.treatmentTextBox.Multiline = true;
             this.treatmentTextBox.Name = "treatmentTextBox";
             this.treatmentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.treatmentTextBox.Size = new System.Drawing.Size(263, 152);
+            this.treatmentTextBox.Size = new System.Drawing.Size(231, 152);
             this.treatmentTextBox.TabIndex = 39;
             // 
             // label3
@@ -166,12 +172,54 @@
             this.label5.TabIndex = 41;
             this.label5.Text = "Treatment : ";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(630, 202);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(332, 237);
+            this.dataGridView2.TabIndex = 60;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(630, 45);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(332, 118);
+            this.dataGridView1.TabIndex = 59;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(626, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(166, 20);
+            this.label6.TabIndex = 58;
+            this.label6.Text = "Previous Treatments : ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(626, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(213, 20);
+            this.label7.TabIndex = 57;
+            this.label7.Text = "Previous Diagnosis Results : ";
+            // 
             // DoctorPatientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(670, 461);
+            this.ClientSize = new System.Drawing.Size(1012, 461);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.treatmentTextBox);
@@ -189,6 +237,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PatientDetails";
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +258,9 @@
         private System.Windows.Forms.TextBox treatmentTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

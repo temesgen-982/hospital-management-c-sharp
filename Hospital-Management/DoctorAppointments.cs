@@ -18,8 +18,56 @@ namespace Hospital_Management
         {
             InitializeComponent();
 
-            doctorId = id;
+            UserData userData = new UserData();
+            doctorId = userData.GetDoctorIdByUserId(id);
+
+            AppointmentsData appointmentsData = new AppointmentsData();
+            DataTable todaysAppointments = appointmentsData.GetAppointments(this.doctorId, DateTime.Today);
+            if (todaysAppointments.Rows.Count == 0)
+            {
+                MessageBox.Show("No appointments found for today.");
+            }
+            dataGridView1.DataSource = todaysAppointments;
+
+            DataTable allAppointments = appointmentsData.GetAppointments(this.doctorId);
+            if (allAppointments.Rows.Count == 0)
+            {
+                MessageBox.Show("No appointments found.");
+            }
+            dataGridView2.DataSource = allAppointments;
         }
+
+        public void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedOption = filterComboBox.SelectedItem.ToString();
+
+            DataTable resultTable;
+
+            AppointmentsData appointmentsData = new AppointmentsData();
+            try
+            {
+                if (selectedOption == "Patient ID")
+                {
+                    resultTable = appointmentsData.GetAppointmentsGroupedByPatient(doctorId);
+                }
+                else if (selectedOption == "Appointment date")
+                {
+                    resultTable = appointmentsData.GetAppointmentsGroupedByDate(doctorId);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid selection.");
+                    return;
+                }
+
+                dataGridView2.DataSource = resultTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
 
         public void homeButton_Click(object sender, EventArgs e)
         {

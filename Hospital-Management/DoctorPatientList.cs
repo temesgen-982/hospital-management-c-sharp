@@ -42,7 +42,7 @@ namespace Hospital_Management
 
                 if (senderGrid.Columns[e.ColumnIndex].Name == "Details")
                 {
-                    DoctorAddMedicalRecord pd = new DoctorAddMedicalRecord(doctorId, patientId);
+                    DoctorPatientDetails pd = new DoctorPatientDetails(doctorId, patientId);
                     pd.Show();
                     loadData();
                 }

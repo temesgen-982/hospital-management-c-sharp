@@ -25,6 +25,14 @@ namespace Hospital_Management
             doctorName.Text += userData.GetUserFullName(id);
 
             profilePictureBox.Image = userData.GetProfileImage(id);
+
+            AppointmentsData appointmentsData = new AppointmentsData();
+            DataTable allAppointments = appointmentsData.GetAppointments(userData.GetDoctorIdByUserId(doctorId));
+            if (allAppointments.Rows.Count == 0)
+            {
+                MessageBox.Show("No appointments found.");
+            }
+            dataGridView1.DataSource = allAppointments;
         }
 
         public void patientList_Click(object sender, EventArgs e)
@@ -38,6 +46,15 @@ namespace Hospital_Management
         {
             DoctorAppointments ap = new DoctorAppointments(doctorId);
             ap.Show();
+            this.Hide();
+        }
+
+        public void editProfile_Click(object sender, EventArgs e)
+        {
+            UserData userData = new UserData();
+
+            DoctorProfile dp = new DoctorProfile(userData.GetDoctorIdByUserId(doctorId));
+            dp.Show();
             this.Hide();
         }
     }

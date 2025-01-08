@@ -220,8 +220,7 @@ namespace Hospital_Management
             try
             {
                 connection.Open();
-
-                // Delete from Users table; dependent rows in role-specific tables are deleted due to cascade
+                    
                 string deleteUserQuery = "DELETE FROM Users WHERE user_id = @UserId";
 
                 using (SqlCommand command = new SqlCommand(deleteUserQuery, connection))
@@ -311,7 +310,7 @@ namespace Hospital_Management
                 connection.Close();
             }
 
-            return null; // Return null if no image found
+            return null;
         }
 
         public int GetReceptionistIdByUserId(int userId)
